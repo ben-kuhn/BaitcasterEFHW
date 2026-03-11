@@ -12,9 +12,10 @@ The **EFHW-100W "Baitcaster"** is a specialized 3D-printed enclosure and wire ma
 ---
 
 ## 2. Design Philosophy
-The system utilizes a **Fixed-Cage Architecture**. Unlike traditional reels where the frame is a simple handle, this design employs a wrap-around cage that serves two purposes:
+The system utilizes a **Fixed-Cage Architecture**. Unlike traditional reels where the frame is a simple handle, this design employs a wrap-around cage that serves three purposes:
 1. **Mechanical Protection:** Protects the spool flanges from side-impacts.
 2. **Backlash Prevention:** The cage pillars prevent wire from jumping the spool (bird-nesting) during rapid deployment.
+3. **Safety:** Keeps the operator's hands away from the rotating high-voltage antenna wire.
 
 ---
 
