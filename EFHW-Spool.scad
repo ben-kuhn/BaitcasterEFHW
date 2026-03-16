@@ -328,18 +328,11 @@ module pillar_rim() {
 
     translate([-(flange_d + 40), 0, 0]) {
         difference() {
-            union() {
-                // Triangular rim connecting pillar positions
-                for(a = [0, 120, 240]) rotate([0, 0, a])
-                    hull() {
-                        // Boss at this pillar
-                        translate([pillar_radius, 0, 0])
-                            cylinder(d = rim_width, h = rim_thickness);
-                        // Connect to next pillar
-                        rotate([0, 0, 120])
-                            translate([pillar_radius, 0, 0])
-                                cylinder(d = rim_width, h = rim_thickness);
-                    }
+            // Circular ring at pillar radius
+            difference() {
+                cylinder(d = (pillar_radius + rim_width/2) * 2, h = rim_thickness);
+                translate([0, 0, -1])
+                    cylinder(d = (pillar_radius - rim_width/2) * 2, h = rim_thickness + 2);
             }
 
             // M4 screw holes at each pillar position
