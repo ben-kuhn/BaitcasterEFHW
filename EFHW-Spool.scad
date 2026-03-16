@@ -141,6 +141,17 @@ module left_frame_cage() {
                 translate([flange_d/2 + 45, -6, -clearance - 1])
                     cylinder(d = 8, h = wall + 2, $fn = 20);
             }
+
+            // M4 screw holes and nut pockets in pillar tops (for optional rim)
+            pillar_top = hub_depth + clearance + wall;  // Top of pillars in frame coords
+            for(a = [0, 120, 240]) rotate([0, 0, a]) {
+                // Screw hole through pillar top
+                translate([flange_d/2 + 8, 0, pillar_top - 12])
+                    cylinder(d = 4.5, h = 13);
+                // Nut pocket
+                translate([flange_d/2 + 8, 0, pillar_top - 12])
+                    rotate([0, 0, 30]) cylinder(d = m4_nut_trap, h = 4, $fn = 6);
+            }
         }
     }
 }
@@ -308,8 +319,41 @@ module master_cap() {
 }
 
 // ========================================
+// 4. OPTIONAL PILLAR RIM (Printed Separately)
+// ========================================
+module pillar_rim() {
+    rim_thickness = 4;
+    rim_width = 12;
+    pillar_radius = flange_d/2 + 8;
+
+    translate([-(flange_d + 40), 0, 0]) {
+        difference() {
+            union() {
+                // Triangular rim connecting pillar positions
+                for(a = [0, 120, 240]) rotate([0, 0, a])
+                    hull() {
+                        // Boss at this pillar
+                        translate([pillar_radius, 0, 0])
+                            cylinder(d = rim_width, h = rim_thickness);
+                        // Connect to next pillar
+                        rotate([0, 0, 120])
+                            translate([pillar_radius, 0, 0])
+                                cylinder(d = rim_width, h = rim_thickness);
+                    }
+            }
+
+            // M4 screw holes at each pillar position
+            for(a = [0, 120, 240]) rotate([0, 0, a])
+                translate([pillar_radius, 0, -1])
+                    cylinder(d = 4.5, h = rim_thickness + 2);
+        }
+    }
+}
+
+// ========================================
 // LAYOUT FOR SLICER
 // ========================================
 left_frame_cage();
 rotating_drum();
 master_cap();
+pillar_rim();  // Optional - print separately if desired
