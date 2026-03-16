@@ -151,6 +151,9 @@ module left_frame_cage() {
                 // Nut pocket (embedded with material above to capture nut)
                 translate([flange_d/2 + 8, 0, pillar_top - 10])
                     rotate([0, 0, 30]) cylinder(d = m4_nut_trap, h = 4, $fn = 6);
+                // Nut insertion slot (horizontal slot to slide nut in from side)
+                translate([flange_d/2 + 8, -3.5, pillar_top - 10])
+                    cube([10, 7, 4]);
             }
         }
     }
