@@ -84,6 +84,24 @@ module left_frame_cage() {
                         translate([flange_d/2 + 8, 3, -clearance])
                             cylinder(d = 2, h = 10, $fn = 20);
                     }
+                    // Left buttress (lateral support)
+                    hull() {
+                        translate([flange_d/2 + 8, 8, -clearance])
+                            cylinder(d = 2, h = wall, $fn = 20);
+                        translate([flange_d/2 + 5, 3, -clearance])
+                            cylinder(d = 2, h = 10, $fn = 20);
+                        translate([flange_d/2 + 11, 3, -clearance])
+                            cylinder(d = 2, h = 10, $fn = 20);
+                    }
+                    // Right buttress (lateral support)
+                    hull() {
+                        translate([flange_d/2 + 8, -8, -clearance])
+                            cylinder(d = 2, h = wall, $fn = 20);
+                        translate([flange_d/2 + 5, -3, -clearance])
+                            cylinder(d = 2, h = 10, $fn = 20);
+                        translate([flange_d/2 + 11, -3, -clearance])
+                            cylinder(d = 2, h = 10, $fn = 20);
+                    }
                 }
 
                 // Eyelet Support on arm opposite handle (120° position) - HOLLOW TUBE
