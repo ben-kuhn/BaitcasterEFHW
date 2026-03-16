@@ -146,10 +146,10 @@ module left_frame_cage() {
             pillar_top = hub_depth + clearance + wall;  // Top of pillars in frame coords
             for(a = [0, 120, 240]) rotate([0, 0, a]) {
                 // Screw hole through pillar top
-                translate([flange_d/2 + 8, 0, pillar_top - 12])
-                    cylinder(d = 4.5, h = 13);
-                // Nut pocket
-                translate([flange_d/2 + 8, 0, pillar_top - 12])
+                translate([flange_d/2 + 8, 0, pillar_top - 15])
+                    cylinder(d = 4.5, h = 16);
+                // Nut pocket (embedded with material above to capture nut)
+                translate([flange_d/2 + 8, 0, pillar_top - 10])
                     rotate([0, 0, 30]) cylinder(d = m4_nut_trap, h = 4, $fn = 6);
             }
         }
