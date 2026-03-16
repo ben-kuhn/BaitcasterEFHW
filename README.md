@@ -1,4 +1,4 @@
-This hasn't actually been printed or tested yet.
+**Status:** Prototype stage - initial prints completed, design being refined.
 
 A 49:1 balun wound on a FT240-43 toroid is mounted to the cover, with BNC connector in the center.  An M5 ground bolt is also attached to the cover.
 

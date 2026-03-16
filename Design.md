@@ -29,7 +29,7 @@ The frame is the interface between the user and the antenna.
 * **Cooling Vents:** Passthrough slots that align with the spool to allow air intake.
 
 ### B. Rotating Drum (The Spool)
-The drum is a hollow "cup" design that serves as the RF transformer's Faraday-shield-equivalent housing.
+The drum is a hollow "cup" design that houses the RF transformer.
 * **Bearing Core:** A 22.1mm–22.4mm (material dependent) press-fit seat for a standard 608zz skateboard bearing.
 * **Captured Nut System:** Three hexagonal pockets on the rim to hold M4 nuts. This provides metal-to-metal threading for the removable cap, preventing stripped plastic threads.
 * **Wire Exit Port:** A smoothed 8mm lateral hole for the high-voltage antenna lead.
@@ -77,8 +77,8 @@ At 100W, the transformer undergoes hysteresis heating. The "Baitcaster" employs 
 ---
 
 ## 6. Safety & RF Considerations
-* **High Voltage:** The antenna wire exit point can see >2000V at 100W. The design uses a 10mm clearance in the eyelet to prevent arcing to the frame.
+* **High Voltage:** The antenna wire can develop high RF voltages at 100W. The eyelet provides a smooth guide surface to prevent wire abrasion during deployment.
 * **Center of Gravity:** The toroid is mounted as close to the bearing axis as possible to minimize wobble during high-speed winding.
-* **UV Stability:** Recommended for ABS/ASA for long-term field exposure.
+* **UV Stability:** ABS/ASA recommended for long-term outdoor exposure.
 
 ---
