@@ -38,10 +38,10 @@ module left_frame_cage() {
                 translate([0, -18, -clearance])
                     cube([flange_d/2 + 85, 36, wall]);
 
-                // Arms 2 and 3: Standard width
+                // Arms 2 and 3: Standard width (extended to support pillars)
                 for(a = [120, 240]) rotate([0, 0, a]) {
                     translate([0, -12, -clearance])
-                        cube([flange_d/2 + 10, 24, wall]);
+                        cube([flange_d/2 + 16, 24, wall]);
                 }
 
                 // Reinforced center hub for axle - THICKER for strength
