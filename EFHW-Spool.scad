@@ -145,9 +145,10 @@ module rotating_drum() {
             // BEARING REINFORCEMENT - thicker base around bearing seat
             cylinder(d = bearing_seat + 12, h = wall + 3);
 
-            // ALIGNMENT RIM at top (slots into cap's alignment ring)
-            translate([0, 0, hub_depth - wall])
-                cylinder(d = toroid_od + 19, h = 4);
+            // ALIGNMENT PEGS (2 pegs at 90° and 270° to avoid M4 holes and zip-tie slots)
+            for(a = [90, 270]) rotate([0, 0, a])
+                translate([toroid_od/2 + 10, 0, hub_depth - wall])
+                    cylinder(d = 5, h = 6);
 
             // REINFORCEMENT BOSSES for M4 nut traps (thicken wall at these points)
             for(i = [0:120:359]) rotate([0, 0, i])
@@ -199,11 +200,11 @@ module rotating_drum() {
                     cylinder(d = 4.5, h = 25);
                 }
 
-        // M4 nut traps for cap attachment (at TOP of hub)
+        // M4 nut traps for cap attachment (at TOP of hub, aligned with bosses)
         for(i = [0:120:359]) rotate([0, 0, i]) {
-            translate([toroid_od/2 + 14, 0, hub_depth - wall - 12])
+            translate([toroid_od/2 + 10, 0, hub_depth - wall - 12])
                 cylinder(d = 4.1, h = 15);
-            translate([toroid_od/2 + 14, 0, hub_depth - wall - 8.5])
+            translate([toroid_od/2 + 10, 0, hub_depth - wall - 8.5])
                 rotate([0, 0, 30]) cylinder(d = m4_nut_trap, h = 4, $fn=6);
         }
 
@@ -232,12 +233,10 @@ module master_cap() {
                         cylinder(d1 = 24, d2 = 18, h = 38);
             }
 
-            // Alignment ring (mates with drum hub)
-            translate([0, 0, -1])
-                difference() {
-                    cylinder(d = toroid_od + 19.5, h = 4.5);
-                    translate([0, 0, -1]) cylinder(d = toroid_od + 18.5, h = 6.5);
-                }
+            // Alignment peg holes (match pegs on drum at 90° and 270°)
+            for(a = [90, 270]) rotate([0, 0, a])
+                translate([toroid_od/2 + 10, 0, -1])
+                    cylinder(d = 5.5, h = wall + 2);  // Slightly larger than 5mm pegs
 
             // BNC connector hole (D-shaped for anti-rotation flat)
             translate([0, 0, -1])
