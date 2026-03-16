@@ -346,6 +346,13 @@ module pillar_rim() {
 // ========================================
 // LAYOUT FOR SLICER
 // ========================================
+// Part dimensions (for 220x220mm print bed):
+//   Frame:      ~183mm x 132mm (print diagonally if needed)
+//   Drum:       120mm diameter
+//   Cap:        120mm diameter
+//   Pillar rim: 148mm diameter
+// All parts fit on a standard 220x220mm bed when printed individually.
+
 left_frame_cage();
 rotating_drum();
 master_cap();
