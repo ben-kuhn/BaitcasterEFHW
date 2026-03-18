@@ -37,10 +37,11 @@ The heart of the system is the broadband transformer. For 100W operation, we uti
 ## 3. Mechanical Assembly
 
 ### Step 1: Hardware Preparation
-* **Frame:** Press-fit the **M8 Nut** into the hexagonal recess on the back of the handle. 
+* **Frame:** Press-fit the **M8 Nut** into the hexagonal recess on the back of the handle.
 * **Drum:** Press the **608zz Bearing** into the center seat of the spool.
 * **Nut Pockets:** Drop **3x M4 Nuts** into the pockets inside the drum's rim.
 * **Binding Post:** Insert an **M4 x 20mm Stainless Screw** through the spool exit port from the inside out. Secure it on the outside with a nut or wingnut. This is your antenna wire connection point.
+* **Pillars:** Insert **M3 nuts** into the nut pockets on each pillar (accessible from the flat side). Each pillar has two nut pockets (top and bottom ends).
 
 ### Step 2: The "Marriage" (Axle Installation)
 Because the axle bolt is inside the hub, it must be installed before the cap is closed.
@@ -56,6 +57,13 @@ Because the axle bolt is inside the hub, it must be installed before the cap is 
 2. Carefully tuck the wires to avoid contact with the rotating axle bolt.
 3. Align the Master Cap with the drum's M4 nut pockets.
 4. Insert the **3x M4 x 16mm screws** through the cap and tighten to seal the hub.
+
+### Step 4: Pillar Installation
+1. Position the **eyelet pillar** at the 120° position (opposite the handle). The eyelet should face outward.
+2. Position the **plain pillars** at the 0° and 240° positions.
+3. Insert **M3 x 12mm screws** through the frame mounting bosses from below.
+4. Tighten into the captured M3 nuts in each pillar's bottom flare.
+5. **(Optional)** Install the **pillar rim** using M3 screws through the rim into the pillar top nuts.
 
 ---
 
@@ -80,8 +88,21 @@ Before deploying wire, perform a continuity check with a multimeter:
 | **Axle Nut** | 1 | M8 Stainless Hex Nut |
 | **Cap Closure Screws** | 3 | M4 x 16mm Stainless Machine Screws |
 | **Captured Cap Nuts** | 3 | M4 Stainless Hex Nuts |
+| **Pillar Screws** | 6 | M3 x 12mm Stainless Machine Screws |
+| **Pillar Nuts** | 6 | M3 Stainless Hex Nuts |
 | **Binding Post Screw** | 1 | M4 x 20mm Stainless Screw (Spool Exit) |
 | **Binding Post Nut** | 1 | M4 Stainless Nut or Wingnut (External) |
 | **Ground Hardware** | 1 | M5 x 15mm Bolt + Wingnut |
 | **Toroid** | 1 | FT240-43 Ferrite Core |
 | **Connector** | 1 | BNC Female Bulkhead (Single Hole) |
+
+## 6. Printed Parts
+
+| Part | Quantity | Notes |
+| :--- | :--- | :--- |
+| **Frame** | 1 | Print with supports if needed |
+| **Drum** | 1 | Print bearing-side down |
+| **Cap** | 1 | Print flat side down |
+| **Plain Pillar** | 2 | Print flat side down |
+| **Eyelet Pillar** | 1 | Print flat side down (has wire guide) |
+| **Pillar Rim** | 1 | Optional, for extra rigidity |

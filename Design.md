@@ -25,8 +25,16 @@ The system utilizes a **Fixed-Cage Architecture**. Unlike traditional reels wher
 The frame is the interface between the user and the antenna.
 * **Hand Grip:** Ergonomically offset to balance the weight of the 100W toroid.
 * **Axle Nut Trap:** A recessed hexagonal pocket designed to lock an M8 nut. This allows the central axle bolt to be tightened from the hub interior without external tools.
-* **Integrated Eyelet:** A reinforced 10mm bore tube that acts as a level-wind guide.
+* **Pillar Mounting Bosses:** Three reinforced mounting points for the separate guard pillars.
 * **Cooling Vents:** Passthrough slots that align with the spool to allow air intake.
+
+### D. Guard Pillars (Printed Separately)
+The pillars are printed as separate parts for improved strength (layers aligned with stress direction).
+* **Half-Cylinder Design:** Flat inner face toward spool, rounded outer face.
+* **Conic Flares:** Wide mounting surfaces at both ends for secure attachment.
+* **Wire Eyelet:** One pillar (120° position) includes an 8mm bore eyelet for wire guidance.
+* **M3 Mounting:** Screws through both ends attach to frame base and optional rim.
+* **Print Quantity:** 2x plain pillars + 1x eyelet pillar.
 
 ### B. Rotating Drum (The Spool)
 The drum is a hollow "cup" design that houses the RF transformer.
@@ -70,9 +78,12 @@ At 100W, the transformer undergoes hysteresis heating. The "Baitcaster" employs 
 | **Central Axle** | M8 x 65mm Stainless Bolt | Main Rotation Axis |
 | **Main Bearing** | 608zz (8x22x7mm) | Friction Reduction |
 | **Cap Screws** | 3x M4 x 16mm Machine Screws | Structural Closure |
+| **Cap Nuts** | 3x M4 Hex Nuts | Captured in Drum |
+| **Pillar Screws** | 6x M3 x 12mm Machine Screws | Pillar Mounting (3 base + 3 rim) |
+| **Pillar Nuts** | 6x M3 Hex Nuts | Captured in Pillars |
 | **Ground Lug** | M5 x 15mm Stainless Bolt/Wingnut | Counterpoise Connection |
 | **RF Input** | BNC Bulkhead (Female) | Coaxial Interface |
-| **Fasteners** | 3x M4 Hex Nuts / 1x M8 Hex Nut | Captured Threading |
+| **Axle Nut** | 1x M8 Hex Nut | Captured in Frame |
 
 ---
 
