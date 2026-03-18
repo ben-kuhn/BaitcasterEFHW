@@ -360,37 +360,13 @@ module guard_pillar(with_eyelet = false) {
                 translate([0, (flare_dia - pillar_dia)/2, -2])
                     cube([pillar_height, pillar_dia, 2]);
 
-                // Triangular supports under bottom flare (fill gap to print bed)
-                // Left side (Y=0 to Y=3)
-                hull() {
-                    translate([0, 0, -2])
-                        cube([flare_len, (flare_dia - pillar_dia)/2, 0.01]);
-                    translate([0, (flare_dia - pillar_dia)/2 - 0.01, -0.01])
-                        cube([flare_len, 0.01, 0.01]);
-                }
-                // Right side (Y=13 to Y=16)
-                hull() {
-                    translate([0, (flare_dia + pillar_dia)/2, -2])
-                        cube([flare_len, (flare_dia - pillar_dia)/2, 0.01]);
-                    translate([0, (flare_dia + pillar_dia)/2, -0.01])
-                        cube([flare_len, 0.01, 0.01]);
-                }
+                // Solid base under bottom flare (full width to print bed)
+                translate([0, 0, -2])
+                    cube([flare_len, flare_dia, 2]);
 
-                // Triangular supports under top flare
-                // Left side
-                hull() {
-                    translate([pillar_height - flare_len, 0, -2])
-                        cube([flare_len, (flare_dia - pillar_dia)/2, 0.01]);
-                    translate([pillar_height - flare_len, (flare_dia - pillar_dia)/2 - 0.01, -0.01])
-                        cube([flare_len, 0.01, 0.01]);
-                }
-                // Right side
-                hull() {
-                    translate([pillar_height - flare_len, (flare_dia + pillar_dia)/2, -2])
-                        cube([flare_len, (flare_dia - pillar_dia)/2, 0.01]);
-                    translate([pillar_height - flare_len, (flare_dia + pillar_dia)/2, -0.01])
-                        cube([flare_len, 0.01, 0.01]);
-                }
+                // Solid base under top flare (full width to print bed)
+                translate([pillar_height - flare_len, 0, -2])
+                    cube([flare_len, flare_dia, 2]);
 
                 // Eyelet (wire guide) - matches full pillar thickness
                 if (with_eyelet) {
