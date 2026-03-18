@@ -318,80 +318,70 @@ module guard_pillar(with_eyelet = false) {
     flare_dia = 16;           // Diameter at flared ends
     eyelet_pos = pillar_height / 2;  // Eyelet at midpoint
 
+    // Helper for half-cylinder (flat at Y=0, round toward +Y)
+    module half_cyl(d, h) {
+        intersection() {
+            translate([0, d/2, 0])
+                rotate([0, 90, 0])
+                    cylinder(d = d, h = h, $fn = 40);
+            cube([h, d, d/2]);
+        }
+    }
+
+    // Helper for half-cone (flat at Y=0, round toward +Y)
+    module half_cone(d1, d2, h) {
+        intersection() {
+            translate([0, max(d1,d2)/2, 0])
+                rotate([0, 90, 0])
+                    cylinder(d1 = d1, d2 = d2, h = h, $fn = 40);
+            cube([h, max(d1,d2), max(d1,d2)/2]);
+        }
+    }
+
     translate([-(flange_d + 40), flange_d/2 + 20, 0]) {
         difference() {
             union() {
-                // Main half-cylinder body (printed lying down, flat side on bed)
-                // X = length (vertical when installed), Y = width, Z = half-depth
-                // Flat side at Y=0 faces inward toward spool
-                intersection() {
-                    translate([flare_len, 0, 0])
-                        rotate([-90, 0, 0])
-                            cylinder(d = pillar_dia, h = pillar_dia, $fn = 40);
-                    translate([flare_len, 0, 0])
-                        cube([pillar_height - flare_len*2, pillar_dia, pillar_dia/2]);
-                }
-                // Extend body between flares
-                translate([flare_len, 0, 0])
-                    intersection() {
-                        translate([0, pillar_dia/2, 0])
-                            rotate([0, 90, 0])
-                                cylinder(d = pillar_dia, h = pillar_height - flare_len*2, $fn = 40);
-                        cube([pillar_height - flare_len*2, pillar_dia, pillar_dia/2]);
-                    }
+                // Bottom flare (wide at X=0, tapers to pillar_dia)
+                half_cone(flare_dia, pillar_dia, flare_len);
 
-                // Bottom flare - full cone, flattened on inner side (Y=0)
-                intersection() {
-                    translate([0, flare_dia/2, 0])
-                        rotate([0, 90, 0])
-                            cylinder(d1 = flare_dia, d2 = pillar_dia, h = flare_len, $fn = 40);
-                    // Keep only Y >= 0 (flat inner face) and Z >= 0 (flat on bed)
-                    cube([flare_len, flare_dia, flare_dia/2]);
-                }
+                // Main pillar body
+                translate([flare_len, (flare_dia - pillar_dia)/2, 0])
+                    half_cyl(pillar_dia, pillar_height - flare_len*2);
 
-                // Top flare - full cone, flattened on inner side (Y=0)
+                // Top flare (pillar_dia at start, wide at end)
                 translate([pillar_height - flare_len, 0, 0])
-                    intersection() {
-                        translate([0, flare_dia/2, 0])
-                            rotate([0, 90, 0])
-                                cylinder(d1 = pillar_dia, d2 = flare_dia, h = flare_len, $fn = 40);
-                        cube([flare_len, flare_dia, flare_dia/2]);
-                    }
+                    half_cone(pillar_dia, flare_dia, flare_len);
 
-                // Eyelet (wire guide) - only on one pillar, sized for 14ga wire
+                // Eyelet (wire guide) - only on one pillar
                 if (with_eyelet) {
-                    translate([eyelet_pos, 0, 0])
-                        intersection() {
-                            translate([0, pillar_dia/2, 0])
-                                cylinder(d = 12, h = pillar_dia/2);
-                            cube([12, 12, pillar_dia/2], center=false);
-                        }
+                    translate([eyelet_pos - 6, (flare_dia - pillar_dia)/2, 0])
+                        half_cyl(12, 12);
                 }
             }
 
-            // Eyelet bore - cut through pillar body so wire can pass
+            // Eyelet bore - cut through so wire can pass
             if (with_eyelet) {
-                translate([eyelet_pos, pillar_dia/2, -1])
-                    cylinder(d = 8, h = pillar_dia/2 + 2);
+                translate([eyelet_pos, flare_dia/2, -1])
+                    cylinder(d = 8, h = flare_dia/2 + 2);
             }
 
             // M3 screw hole at bottom end (for frame mounting)
-            translate([-1, flare_dia/2, pillar_dia/4])
+            translate([-1, flare_dia/2, flare_dia/4])
                 rotate([0, 90, 0])
                     cylinder(d = 3.5, h = flare_len + 2);
 
             // M3 nut pocket at bottom (recessed from end face)
-            translate([3, flare_dia/2, pillar_dia/4])
+            translate([3, flare_dia/2, flare_dia/4])
                 rotate([0, 90, 0])
                     rotate([0, 0, 30]) cylinder(d = m3_nut_trap, h = 3, $fn = 6);
 
             // M3 screw hole at top end (for rim mounting)
-            translate([pillar_height - flare_len - 1, flare_dia/2, pillar_dia/4])
+            translate([pillar_height - flare_len - 1, flare_dia/2, flare_dia/4])
                 rotate([0, 90, 0])
                     cylinder(d = 3.5, h = flare_len + 2);
 
             // M3 nut pocket at top (recessed from end face)
-            translate([pillar_height - 6, flare_dia/2, pillar_dia/4])
+            translate([pillar_height - 6, flare_dia/2, flare_dia/4])
                 rotate([0, 90, 0])
                     rotate([0, 0, 30]) cylinder(d = m3_nut_trap, h = 3, $fn = 6);
         }
