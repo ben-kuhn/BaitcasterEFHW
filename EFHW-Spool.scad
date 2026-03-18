@@ -352,17 +352,22 @@ module guard_pillar(with_eyelet = false) {
                 translate([pillar_height - flare_len, 0, 0])
                     half_cone(pillar_dia, flare_dia, flare_len);
 
-                // Eyelet (wire guide) - only on one pillar
+                // Eyelet (wire guide) - tube extending outward from pillar
                 if (with_eyelet) {
-                    translate([eyelet_pos - 6, (flare_dia - pillar_dia)/2, 0])
-                        half_cyl(12, 12);
+                    // Pillar body center Y = (flare_dia - pillar_dia)/2 + pillar_dia/2
+                    pillar_center_y = (flare_dia - pillar_dia)/2 + pillar_dia/2;
+                    translate([eyelet_pos, pillar_center_y, pillar_dia/4])
+                        rotate([-90, 0, 0])  // Tube extends in +Y direction
+                            cylinder(d = 12, h = 8, $fn = 40);
                 }
             }
 
-            // Eyelet bore - cut through so wire can pass
+            // Eyelet bore - cut through pillar and eyelet so wire can pass
             if (with_eyelet) {
-                translate([eyelet_pos, flare_dia/2, -1])
-                    cylinder(d = 8, h = flare_dia/2 + 2);
+                pillar_center_y = (flare_dia - pillar_dia)/2 + pillar_dia/2;
+                translate([eyelet_pos, 0, pillar_dia/4])
+                    rotate([-90, 0, 0])
+                        cylinder(d = 8, h = pillar_center_y + 10, $fn = 40);
             }
 
             // M3 screw hole at bottom end (for frame mounting)
