@@ -318,7 +318,7 @@ module guard_pillar(with_eyelet = false) {
     flare_dia = 16;           // Diameter at flared ends
     eyelet_pos = pillar_height / 2;  // Eyelet at midpoint
 
-    // Helper for half-cylinder (flat at Y=0, round toward +Y)
+    // Helper for half-cylinder (flat at Z=0 for print bed, round toward +Z)
     module half_cyl(d, h) {
         intersection() {
             translate([0, d/2, 0])
@@ -328,7 +328,8 @@ module guard_pillar(with_eyelet = false) {
         }
     }
 
-    // Helper for half-cone (flat at Y=0, round toward +Y)
+    // Helper for half-cone (flat at Z=0 for print bed, round toward +Z)
+    // Cone is centered at Y = max(d1,d2)/2
     module half_cone(d1, d2, h) {
         intersection() {
             translate([0, max(d1,d2)/2, 0])
@@ -337,6 +338,9 @@ module guard_pillar(with_eyelet = false) {
             cube([h, max(d1,d2), max(d1,d2)/2]);
         }
     }
+
+    // Center Y position for all geometry (flares are centered at Y=flare_dia/2)
+    center_y = flare_dia / 2;  // = 8
 
     translate([-(flange_d + 40), flange_d/2 + 20, 0]) {
         difference() {
@@ -367,25 +371,25 @@ module guard_pillar(with_eyelet = false) {
                     cylinder(d = 8, h = pillar_dia/2 + 2, $fn = 40);
             }
 
-            // M3 screw hole at bottom end (aligned with nut near flat side)
-            translate([-1, 2, flare_dia/4])
+            // M3 screw hole at bottom end - through center of flare
+            translate([-1, center_y, flare_dia/4])
                 rotate([0, 90, 0])
                     cylinder(d = 3.5, h = flare_len + 2);
 
-            // M3 nut pocket at bottom (inserts from flat side Y=0, cone stays solid)
-            translate([flare_len/2, -0.1, flare_dia/4])
-                rotate([-90, 30, 0])
-                    cylinder(d = m3_nut_trap, h = 4, $fn = 6);
+            // M3 nut pocket at bottom - opens from Z=0 (flat/print bed side)
+            translate([flare_len/2, center_y, -0.1])
+                rotate([0, 0, 30])
+                    cylinder(d = m3_nut_trap, h = flare_dia/4 + 0.5, $fn = 6);
 
-            // M3 screw hole at top end (aligned with nut near flat side)
-            translate([pillar_height - flare_len - 1, 2, flare_dia/4])
+            // M3 screw hole at top end - through center of flare
+            translate([pillar_height - flare_len - 1, center_y, flare_dia/4])
                 rotate([0, 90, 0])
                     cylinder(d = 3.5, h = flare_len + 2);
 
-            // M3 nut pocket at top (inserts from flat side Y=0, cone stays solid)
-            translate([pillar_height - flare_len/2, -0.1, flare_dia/4])
-                rotate([-90, 30, 0])
-                    cylinder(d = m3_nut_trap, h = 4, $fn = 6);
+            // M3 nut pocket at top - opens from Z=0 (flat/print bed side)
+            translate([pillar_height - flare_len/2, center_y, -0.1])
+                rotate([0, 0, 30])
+                    cylinder(d = m3_nut_trap, h = flare_dia/4 + 0.5, $fn = 6);
         }
     }
 }
