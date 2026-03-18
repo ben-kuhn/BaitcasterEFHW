@@ -367,25 +367,25 @@ module guard_pillar(with_eyelet = false) {
                     cylinder(d = 8, h = pillar_dia/2 + 2, $fn = 40);
             }
 
-            // M3 screw hole at bottom end (for frame mounting)
-            translate([-1, flare_dia/2, flare_dia/4])
+            // M3 screw hole at bottom end (aligned with nut near flat side)
+            translate([-1, 2, flare_dia/4])
                 rotate([0, 90, 0])
                     cylinder(d = 3.5, h = flare_len + 2);
 
-            // M3 nut pocket at bottom (opens toward flat side Y=0, aligned with screw)
-            translate([flare_len/2, flare_dia/2, flare_dia/4])
-                rotate([90, 30, 0])
-                    cylinder(d = m3_nut_trap, h = flare_dia/2 + 1, $fn = 6);
+            // M3 nut pocket at bottom (inserts from flat side Y=0, cone stays solid)
+            translate([flare_len/2, -0.1, flare_dia/4])
+                rotate([-90, 30, 0])
+                    cylinder(d = m3_nut_trap, h = 4, $fn = 6);
 
-            // M3 screw hole at top end (for rim mounting)
-            translate([pillar_height - flare_len - 1, flare_dia/2, flare_dia/4])
+            // M3 screw hole at top end (aligned with nut near flat side)
+            translate([pillar_height - flare_len - 1, 2, flare_dia/4])
                 rotate([0, 90, 0])
                     cylinder(d = 3.5, h = flare_len + 2);
 
-            // M3 nut pocket at top (opens toward flat side Y=0, aligned with screw)
-            translate([pillar_height - flare_len/2, flare_dia/2, flare_dia/4])
-                rotate([90, 30, 0])
-                    cylinder(d = m3_nut_trap, h = flare_dia/2 + 1, $fn = 6);
+            // M3 nut pocket at top (inserts from flat side Y=0, cone stays solid)
+            translate([pillar_height - flare_len/2, -0.1, flare_dia/4])
+                rotate([-90, 30, 0])
+                    cylinder(d = m3_nut_trap, h = 4, $fn = 6);
         }
     }
 }
