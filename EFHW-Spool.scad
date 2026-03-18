@@ -12,6 +12,7 @@ material = "PETG"; // <-- CHANGE THIS TO SWITCH MATERIALS
 bearing_seat = (material == "PETG") ? 22.15 : 22.4;  // 608zz bearing fit
 m8_bore = (material == "PETG") ? 8.2 : 8.8;          // M8 axle bolt
 m4_nut_trap = (material == "PETG") ? 7.9 : 8.5;      // M4 captured nuts
+m3_nut_trap = (material == "PETG") ? 6.2 : 6.5;      // M3 captured nuts
 wall = (material == "PETG") ? 4.0 : 4.0;             // Wall thickness
 
 // Common parameters
@@ -20,6 +21,10 @@ hub_depth = 55;
 flange_d = 120;       // Reduced from 175mm for 40m capacity
 clearance = 6;
 $fn = 100;
+
+// Pillar parameters (must be after flange_d, hub_depth, clearance, wall)
+pillar_radius = flange_d/2 + 8;                      // Distance from center to pillar
+pillar_height = hub_depth + clearance*2 + wall;      // Total pillar height
 
 // Display material info
 echo(str("=== Building for ", material, " ==="));
@@ -59,27 +64,10 @@ module left_frame_cage() {
                             cube([2, 6, wall + 0.1]);
                     }
 
-                // Thin guard pillars (8mm diameter) - one on each Y arm
+                // Pillar mounting bosses (pillars are now separate parts)
                 for(a = [0, 120, 240]) rotate([0, 0, a])
-                    translate([flange_d/2 + 8, 0, -clearance])
-                        cylinder(d = 8, h = hub_depth + (clearance*2) + wall);
-
-                // Smooth tapered buttress at pillar bases for added support
-                for(a = [0, 120, 240]) rotate([0, 0, a])
-                    hull() {
-                        // Wide base on arm (elliptical footprint)
-                        translate([flange_d/2 + 4, 0, -clearance])
-                            cylinder(d = 2, h = wall, $fn = 20);
-                        translate([flange_d/2 + 14, 0, -clearance])
-                            cylinder(d = 2, h = wall, $fn = 20);
-                        translate([flange_d/2 + 8, 8, -clearance])
-                            cylinder(d = 2, h = wall, $fn = 20);
-                        translate([flange_d/2 + 8, -8, -clearance])
-                            cylinder(d = 2, h = wall, $fn = 20);
-                        // Tapers up to pillar
-                        translate([flange_d/2 + 8, 0, -clearance])
-                            cylinder(d = 8, h = 10, $fn = 40);
-                    }
+                    translate([pillar_radius, 0, -clearance])
+                        cylinder(d = 14, h = wall);
 
                 // Eyelet Support on arm opposite handle (120° position) - HOLLOW TUBE
                 rotate([0, 0, 120])
@@ -142,19 +130,10 @@ module left_frame_cage() {
                     cylinder(d = 8, h = wall + 2, $fn = 20);
             }
 
-            // M4 screw holes and nut pockets in pillar tops (for optional rim)
-            pillar_top = hub_depth + clearance + wall;  // Top of pillars in frame coords
-            for(a = [0, 120, 240]) rotate([0, 0, a]) {
-                // Screw hole through pillar top
-                translate([flange_d/2 + 8, 0, pillar_top - 15])
-                    cylinder(d = 4.5, h = 16);
-                // Nut pocket (embedded with material above to capture nut)
-                translate([flange_d/2 + 8, 0, pillar_top - 10])
-                    rotate([0, 0, 30]) cylinder(d = m4_nut_trap, h = 4, $fn = 6);
-                // Nut insertion slot (horizontal slot to slide nut in from side)
-                translate([flange_d/2 + 8, -3.75, pillar_top - 10])
-                    cube([5, 7.5, 4]);
-            }
+            // M3 screw holes for pillar mounting (pillars are separate parts)
+            for(a = [0, 120, 240]) rotate([0, 0, a])
+                translate([pillar_radius, 0, -clearance - 1])
+                    cylinder(d = 3.5, h = wall + 2);
         }
     }
 }
@@ -327,7 +306,6 @@ module master_cap() {
 module pillar_rim() {
     rim_thickness = 4;
     rim_width = 12;
-    pillar_radius = flange_d/2 + 8;
 
     translate([-(flange_d + 40), 0, 0]) {
         difference() {
@@ -338,10 +316,70 @@ module pillar_rim() {
                     cylinder(d = (pillar_radius - rim_width/2) * 2, h = rim_thickness + 2);
             }
 
-            // M4 screw holes at each pillar position
+            // M3 screw holes at each pillar position
             for(a = [0, 120, 240]) rotate([0, 0, a])
                 translate([pillar_radius, 0, -1])
-                    cylinder(d = 4.5, h = rim_thickness + 2);
+                    cylinder(d = 3.5, h = rim_thickness + 2);
+        }
+    }
+}
+
+// ========================================
+// 5. GUARD PILLAR (Printed Separately - need 3)
+// ========================================
+module guard_pillar() {
+    pillar_width = 10;        // Width of half-cylinder
+    flare_height = 8;         // Height of flared ends
+    flare_width = 16;         // Width at flared ends
+
+    translate([-(flange_d + 40), flange_d/2 + 20, 0]) {
+        difference() {
+            union() {
+                // Main half-cylinder body (flat side down for printing)
+                translate([0, 0, pillar_width/2])
+                    rotate([0, 90, 0])
+                        intersection() {
+                            cylinder(d = pillar_width, h = pillar_height, $fn = 40);
+                            translate([-pillar_width/2, 0, 0])
+                                cube([pillar_width, pillar_width, pillar_height]);
+                        }
+
+                // Bottom flare (flat on bottom for printing)
+                hull() {
+                    // Base of flare
+                    cube([flare_height, flare_width, pillar_width/2]);
+                    // Transition to pillar body
+                    translate([flare_height, (flare_width - pillar_width)/2, 0])
+                        cube([0.1, pillar_width, pillar_width/2]);
+                }
+
+                // Top flare
+                translate([pillar_height - flare_height, 0, 0])
+                    hull() {
+                        // Transition from pillar body
+                        translate([0, (flare_width - pillar_width)/2, 0])
+                            cube([0.1, pillar_width, pillar_width/2]);
+                        // End of flare
+                        translate([flare_height, 0, 0])
+                            cube([0.1, flare_width, pillar_width/2]);
+                    }
+            }
+
+            // M3 screw hole at bottom (through flare, for frame mounting)
+            translate([flare_height/2, flare_width/2, -1])
+                cylinder(d = 3.5, h = pillar_width/2 + 2);
+
+            // M3 nut pocket at bottom (on flat side)
+            translate([flare_height/2, flare_width/2, -0.1])
+                rotate([0, 0, 30]) cylinder(d = m3_nut_trap, h = 3, $fn = 6);
+
+            // M3 screw hole at top (through flare, for rim mounting)
+            translate([pillar_height - flare_height/2, flare_width/2, -1])
+                cylinder(d = 3.5, h = pillar_width/2 + 2);
+
+            // M3 nut pocket at top (on flat side)
+            translate([pillar_height - flare_height/2, flare_width/2, -0.1])
+                rotate([0, 0, 30]) cylinder(d = m3_nut_trap, h = 3, $fn = 6);
         }
     }
 }
@@ -350,13 +388,15 @@ module pillar_rim() {
 // LAYOUT FOR SLICER
 // ========================================
 // Part dimensions (for 220x220mm print bed):
-//   Frame:      ~183mm x 132mm (print diagonally if needed)
-//   Drum:       120mm diameter
-//   Cap:        120mm diameter
-//   Pillar rim: 148mm diameter
+//   Frame:       ~183mm x 132mm (print diagonally if needed)
+//   Drum:        120mm diameter
+//   Cap:         120mm diameter
+//   Pillar rim:  148mm diameter (optional)
+//   Guard pillar: ~71mm x 16mm (print 3, flat side down)
 // All parts fit on a standard 220x220mm bed when printed individually.
 
 left_frame_cage();
 rotating_drum();
 master_cap();
-pillar_rim();  // Optional - print separately if desired
+pillar_rim();      // Optional - print separately if desired
+guard_pillar();    // Print 3 of these (flat side down)
