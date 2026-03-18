@@ -356,11 +356,15 @@ module guard_pillar(with_eyelet = false) {
                 translate([pillar_height - flare_len, 0, 0])
                     half_cone(pillar_dia, flare_dia, flare_len);
 
-                // Eyelet (wire guide) - matches pillar thickness
+                // 2mm flat spine on top for extra thickness around nut pockets
+                translate([0, (flare_dia - pillar_dia)/2, pillar_dia/2])
+                    cube([pillar_height, pillar_dia, 2]);
+
+                // Eyelet (wire guide) - matches pillar thickness + spine
                 if (with_eyelet) {
                     pillar_y_offset = (flare_dia - pillar_dia)/2;
                     translate([eyelet_pos, pillar_y_offset + pillar_dia/2, 0])
-                        cylinder(d = 12, h = pillar_dia/2, $fn = 40);
+                        cylinder(d = 12, h = pillar_dia/2 + 2, $fn = 40);
                 }
             }
 
