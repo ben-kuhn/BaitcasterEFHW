@@ -376,20 +376,28 @@ module guard_pillar(with_eyelet = false) {
                 rotate([0, 90, 0])
                     cylinder(d = 3.5, h = flare_len + 2);
 
-            // M3 nut pocket at bottom - opens from Z=0 (flat/print bed side)
-            translate([flare_len/2, center_y, -0.1])
-                rotate([0, 0, 30])
-                    cylinder(d = m3_nut_trap, h = flare_dia/4 + 0.5, $fn = 6);
+            // M3 nut pocket at bottom - hex axis along X for screw engagement
+            translate([flare_len/2 - 1.5, center_y, flare_dia/4])
+                rotate([0, 90, 0])
+                    cylinder(d = m3_nut_trap, h = 3, $fn = 6);
+
+            // Nut insertion slot at bottom - from flat side (Z=0) up to pocket
+            translate([flare_len/2 - 1.5, center_y - 2.75, -0.1])
+                cube([3, 5.5, flare_dia/4 + 0.1]);
 
             // M3 screw hole at top end - through center of flare
             translate([pillar_height - flare_len - 1, center_y, flare_dia/4])
                 rotate([0, 90, 0])
                     cylinder(d = 3.5, h = flare_len + 2);
 
-            // M3 nut pocket at top - opens from Z=0 (flat/print bed side)
-            translate([pillar_height - flare_len/2, center_y, -0.1])
-                rotate([0, 0, 30])
-                    cylinder(d = m3_nut_trap, h = flare_dia/4 + 0.5, $fn = 6);
+            // M3 nut pocket at top - hex axis along X for screw engagement
+            translate([pillar_height - flare_len/2 - 1.5, center_y, flare_dia/4])
+                rotate([0, 90, 0])
+                    cylinder(d = m3_nut_trap, h = 3, $fn = 6);
+
+            // Nut insertion slot at top - from flat side (Z=0) up to pocket
+            translate([pillar_height - flare_len/2 - 1.5, center_y - 2.75, -0.1])
+                cube([3, 5.5, flare_dia/4 + 0.1]);
         }
     }
 }
