@@ -356,14 +356,14 @@ module guard_pillar(with_eyelet = false) {
                 translate([pillar_height - flare_len, 0, 0])
                     half_cone(pillar_dia, flare_dia, flare_len);
 
-                // 2mm flat spine on top for extra thickness around nut pockets
-                translate([0, (flare_dia - pillar_dia)/2, pillar_dia/2])
+                // 2mm flat spine on bottom (print bed side) for extra thickness
+                translate([0, (flare_dia - pillar_dia)/2, -2])
                     cube([pillar_height, pillar_dia, 2]);
 
-                // Eyelet (wire guide) - matches pillar thickness + spine
+                // Eyelet (wire guide) - matches full pillar thickness
                 if (with_eyelet) {
                     pillar_y_offset = (flare_dia - pillar_dia)/2;
-                    translate([eyelet_pos, pillar_y_offset + pillar_dia/2, 0])
+                    translate([eyelet_pos, pillar_y_offset + pillar_dia/2, -2])
                         cylinder(d = 12, h = pillar_dia/2 + 2, $fn = 40);
                 }
             }
@@ -371,8 +371,8 @@ module guard_pillar(with_eyelet = false) {
             // Eyelet bore - cut through so wire can pass
             if (with_eyelet) {
                 pillar_y_offset = (flare_dia - pillar_dia)/2;
-                translate([eyelet_pos, pillar_y_offset + pillar_dia/2, -1])
-                    cylinder(d = 8, h = pillar_dia/2 + 2, $fn = 40);
+                translate([eyelet_pos, pillar_y_offset + pillar_dia/2, -3])
+                    cylinder(d = 8, h = pillar_dia/2 + 4, $fn = 40);
             }
 
             // M3 screw hole at bottom end - through center of pillar thickness
@@ -386,9 +386,9 @@ module guard_pillar(with_eyelet = false) {
                     rotate([0, 0, 30])
                         cylinder(d = m3_nut_trap, h = 3, $fn = 6);
 
-            // Nut insertion slot at bottom - from flat side (Z=0) up to pocket
-            translate([flare_len/2 - 1.5, center_y - 2.75, -0.1])
-                cube([3, 5.5, pillar_dia/4 + 0.1]);
+            // Nut insertion slot at bottom - from flat side (Z=-2) up to pocket
+            translate([flare_len/2 - 1.5, center_y - 2.75, -2.1])
+                cube([3, 5.5, pillar_dia/4 + 2.1]);
 
             // M3 screw hole at top end - through center of pillar thickness
             translate([pillar_height - flare_len - 1, center_y, pillar_dia/4])
@@ -401,9 +401,9 @@ module guard_pillar(with_eyelet = false) {
                     rotate([0, 0, 30])
                         cylinder(d = m3_nut_trap, h = 3, $fn = 6);
 
-            // Nut insertion slot at top - from flat side (Z=0) up to pocket
-            translate([pillar_height - flare_len/2 - 1.5, center_y - 2.75, -0.1])
-                cube([3, 5.5, pillar_dia/4 + 0.1]);
+            // Nut insertion slot at top - from flat side (Z=-2) up to pocket
+            translate([pillar_height - flare_len/2 - 1.5, center_y - 2.75, -2.1])
+                cube([3, 5.5, pillar_dia/4 + 2.1]);
         }
     }
 }
