@@ -360,13 +360,25 @@ module guard_pillar(with_eyelet = false) {
                 translate([0, (flare_dia - pillar_dia)/2, -2])
                     cube([pillar_height, pillar_dia, 2]);
 
-                // Solid base under bottom flare (full width to print bed)
-                translate([0, 0, -2])
-                    cube([flare_len, flare_dia, 2]);
+                // Tapered base under bottom flare (follows cone profile)
+                hull() {
+                    // Wide end at X=0
+                    translate([0, 0, -2])
+                        cube([0.01, flare_dia, 2]);
+                    // Narrow end at X=flare_len (matches pillar width)
+                    translate([flare_len - 0.01, (flare_dia - pillar_dia)/2, -2])
+                        cube([0.01, pillar_dia, 2]);
+                }
 
-                // Solid base under top flare (full width to print bed)
-                translate([pillar_height - flare_len, 0, -2])
-                    cube([flare_len, flare_dia, 2]);
+                // Tapered base under top flare (follows cone profile)
+                hull() {
+                    // Narrow end (matches pillar width)
+                    translate([pillar_height - flare_len, (flare_dia - pillar_dia)/2, -2])
+                        cube([0.01, pillar_dia, 2]);
+                    // Wide end at X=pillar_height
+                    translate([pillar_height - 0.01, 0, -2])
+                        cube([0.01, flare_dia, 2]);
+                }
 
                 // Eyelet (wire guide) - matches full pillar thickness
                 if (with_eyelet) {
