@@ -24,7 +24,7 @@ $fn = 100;
 
 // Pillar parameters (must be after flange_d, hub_depth, clearance, wall)
 pillar_radius = flange_d/2 + 8;                      // Distance from center to pillar
-pillar_height = hub_depth + clearance*2 + wall;      // Total pillar height
+pillar_height = hub_depth;                           // Match drum+cap height (55mm + 4mm rim = 59mm)
 
 // Display material info
 echo(str("=== Building for ", material, " ==="));
@@ -118,7 +118,7 @@ module left_frame_cage() {
             // M3 screw holes for pillar mounting (pillars are separate parts)
             for(a = [0, 120, 240]) rotate([0, 0, a])
                 translate([pillar_radius, 0, -clearance - 1])
-                    cylinder(d = 3.5, h = wall + 2);
+                    cylinder(d = 4.0, h = wall + 2);
         }
     }
 }
@@ -304,7 +304,7 @@ module pillar_rim() {
             // M3 screw holes at each pillar position
             for(a = [0, 120, 240]) rotate([0, 0, a])
                 translate([pillar_radius, 0, -1])
-                    cylinder(d = 3.5, h = rim_thickness + 2);
+                    cylinder(d = 4.0, h = rim_thickness + 2);
         }
     }
 }
@@ -398,7 +398,7 @@ module guard_pillar(with_eyelet = false) {
             // M3 screw hole at bottom end - through center of pillar thickness
             translate([-1, center_y, pillar_dia/4])
                 rotate([0, 90, 0])
-                    cylinder(d = 3.5, h = flare_len + 2);
+                    cylinder(d = 4.0, h = flare_len + 2);
 
             // M3 nut pocket at bottom - hex axis along X, flats at top/bottom
             translate([flare_len/2 - 1.5, center_y, pillar_dia/4])
@@ -413,7 +413,7 @@ module guard_pillar(with_eyelet = false) {
             // M3 screw hole at top end - through center of pillar thickness
             translate([pillar_height - flare_len - 1, center_y, pillar_dia/4])
                 rotate([0, 90, 0])
-                    cylinder(d = 3.5, h = flare_len + 2);
+                    cylinder(d = 4.0, h = flare_len + 2);
 
             // M3 nut pocket at top - hex axis along X, flats at top/bottom
             translate([pillar_height - flare_len/2 - 1.5, center_y, pillar_dia/4])
