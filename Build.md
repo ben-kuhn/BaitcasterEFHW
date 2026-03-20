@@ -37,33 +37,32 @@ The heart of the system is the broadband transformer. For 100W operation, we uti
 ## 3. Mechanical Assembly
 
 ### Step 1: Hardware Preparation
-* **Frame:** Press-fit the **M8 Nut** into the hexagonal recess on the back of the handle.
+* **Frame:** Press-fit the **M8 Nut** into the hexagonal recess in the center hub.
 * **Drum:** Press the **608zz Bearing** into the center seat of the spool.
-* **Nut Pockets:** Drop **3x M4 Nuts** into the pockets inside the drum's rim.
+* **Drum Nut Pockets:** Drop **3x M4 Nuts** into the pockets inside the drum's rim (at 0°, 120°, 240°).
 * **Binding Post:** Insert an **M4 x 20mm Stainless Screw** through the spool exit port from the inside out. Secure it on the outside with a nut or wingnut. This is your antenna wire connection point.
-* **Pillars:** Insert **M3 nuts** into the nut pockets on each pillar (accessible from the flat side). Each pillar has two nut pockets (top and bottom ends).
+* **Optional Rim Nuts:** If using the pillar rim, slide **3x M4 Nuts** into the slots at the top of each pillar.
 
 ### Step 2: The "Marriage" (Axle Installation)
 Because the axle bolt is inside the hub, it must be installed before the cap is closed.
 1. Pass the **M8 x 65mm Bolt** through the center of the **Master Cap** (from the inside out).
-2. Align the **Master Cap** against the **Rotating Drum**, passing the bolt through the drum's bearing.
-3. Thread the bolt into the **Stationary Frame** handle.
-4. **Tighten:** Use a **deep-well socket** inside the open hub to tighten the M8 bolt. Ensure the assembly spins freely on the bearing with no lateral play.
-
-
+2. Align the **Master Cap** against the **Rotating Drum**, matching the alignment pegs (at 90° and 270°) to their holes.
+3. Pass the bolt through the drum's bearing.
+4. Thread the bolt into the **Stationary Frame** center hub.
+5. **Tighten:** Use a **deep-well socket** inside the open hub to tighten the M8 bolt. Ensure the assembly spins freely on the bearing with no lateral play.
 
 ### Step 3: Final Wiring & Closure
 1. Solder the internal jumper wire from the transformer secondary to the head of the **Binding Post screw** inside the drum.
 2. Carefully tuck the wires to avoid contact with the rotating axle bolt.
-3. Align the Master Cap with the drum's M4 nut pockets.
+3. Align the Master Cap with the drum's M4 nut pockets (at 0°, 120°, 240°).
 4. Insert the **3x M4 x 16mm screws** through the cap and tighten to seal the hub.
 
-### Step 4: Pillar Installation
-1. Position the **eyelet pillar** at the 120° position (opposite the handle). The eyelet should face outward.
-2. Position the **plain pillars** at the 0° and 240° positions.
-3. Insert **M3 x 12mm screws** through the frame mounting bosses from below.
-4. Tighten into the captured M3 nuts in each pillar's bottom flare.
-5. **(Optional)** Install the **pillar rim** using M3 screws through the rim into the pillar top nuts.
+### Step 4: Optional Pillar Rim Installation
+The pillars are integrated into the frame. For additional rigidity, install the optional rim:
+1. Ensure **M4 nuts** are inserted into the slots at the top of each pillar.
+2. Place the **pillar rim** over the pillars, aligning the screw holes.
+3. Insert **3x M4 x 12mm screws** through the rim into the captured nuts.
+4. Tighten evenly.
 
 ---
 
@@ -79,7 +78,7 @@ Before deploying wire, perform a continuity check with a multimeter:
 
 ---
 
-## 5. Updated Bill of Materials (BOM)
+## 5. Bill of Materials (BOM)
 
 | Item | Quantity | Specification |
 | :--- | :--- | :--- |
@@ -88,21 +87,19 @@ Before deploying wire, perform a continuity check with a multimeter:
 | **Axle Nut** | 1 | M8 Stainless Hex Nut |
 | **Cap Closure Screws** | 3 | M4 x 16mm Stainless Machine Screws |
 | **Captured Cap Nuts** | 3 | M4 Stainless Hex Nuts |
-| **Pillar Screws** | 6 | M3 x 12mm Stainless Machine Screws |
-| **Pillar Nuts** | 6 | M3 Stainless Hex Nuts |
+| **Rim Screws** | 3 | M4 x 12mm Stainless Machine Screws (optional) |
+| **Rim Nuts** | 3 | M4 Stainless Hex Nuts (optional) |
 | **Binding Post Screw** | 1 | M4 x 20mm Stainless Screw (Spool Exit) |
 | **Binding Post Nut** | 1 | M4 Stainless Nut or Wingnut (External) |
 | **Ground Hardware** | 1 | M5 x 15mm Bolt + Wingnut |
 | **Toroid** | 1 | FT240-43 Ferrite Core |
-| **Connector** | 1 | BNC Female Bulkhead (Single Hole) |
+| **Connector** | 1 | BNC Female Bulkhead (D-flat style) |
 
 ## 6. Printed Parts
 
 | Part | Quantity | Notes |
 | :--- | :--- | :--- |
-| **Frame** | 1 | Print with supports if needed |
+| **Frame** | 1 | Includes integrated pillars and eyelet |
 | **Drum** | 1 | Print bearing-side down |
 | **Cap** | 1 | Print flat side down |
-| **Plain Pillar** | 2 | Print flat side down |
-| **Eyelet Pillar** | 1 | Print flat side down (has wire guide) |
 | **Pillar Rim** | 1 | Optional, for extra rigidity |
