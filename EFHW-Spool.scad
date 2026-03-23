@@ -137,16 +137,12 @@ module rotating_drum() {
             // Center hub (hollow cylinder for toroid) - 4mm wall for heat handling
             cylinder(d = toroid_od + 26, h = hub_depth - wall);
 
-            // BEARING REINFORCEMENT - thicker base around bearing seat
-            cylinder(d = bearing_seat + 12, h = wall + 3);
+            // BEARING REINFORCEMENT - compact base around bearing seat
+            cylinder(d = bearing_seat + 6, h = wall);
 
-            // BEARING RETENTION RING - ring-shaped shoulder at bottom of bearing seat
-            // Outer diameter matches bearing seat, inner opening for axle
-            difference() {
-                cylinder(d = bearing_seat, h = 1);  // Outer matches bearing seat
-                translate([0, 0, -0.5])
-                    cylinder(d = 12, h = 2);  // 12mm inner opening for axle
-            }
+            // BEARING RETENTION RING - solid disc, center hole cut in difference block
+            // Creates a 2mm thick ring to prevent bearing from sliding out
+            cylinder(d = bearing_seat, h = 2);
 
             // ALIGNMENT PEGS (2 pegs at 90° and 270° to avoid M4 holes and zip-tie slots)
             for(a = [90, 270]) rotate([0, 0, a])
@@ -179,10 +175,13 @@ module rotating_drum() {
         translate([0, 0, wall])
             cylinder(d = toroid_od + 18, h = hub_depth + 10);
 
-        // Bearing seat - full cut, retention ring added in union block above
+        // Bearing seat with retention ring
         // 608zz bearing: 22mm OD, 8mm ID, 7mm wide
-        translate([0, 0, 1])
-            cylinder(d = bearing_seat, h = wall + 6);  // Bearing seat starts above retention ring
+        // Ring is 2mm thick at Z=0-2, bearing seat opens above it
+        translate([0, 0, -1])
+            cylinder(d = 14, h = 4);  // Center hole through ring and spokes (14mm clears M8 axle)
+        translate([0, 0, 2])
+            cylinder(d = bearing_seat, h = wall + 6);  // Bearing seat above retention ring
 
         // TRIANGULAR COOLING VENTS around bearing (narrow near bearing, wide at outer edge)
         for(v = [0:60:359]) rotate([0, 0, v])
@@ -218,6 +217,17 @@ module rotating_drum() {
         for(v = [15:30:359]) rotate([0, 0, v])
             translate([toroid_od/2 + 7, -2.5, back_rim_height + 2])
                 cube([22, 5, hub_depth - back_rim_height - wall - 8]);
+    }
+
+    // BEARING SUPPORT RING - added separately so hollow interior doesn't remove it
+    // 4mm wall collar around bearing for grip
+    difference() {
+        cylinder(d = bearing_seat + 10, h = 9);
+        // Cut bearing seat and center hole
+        translate([0, 0, 2])
+            cylinder(d = bearing_seat, h = 10);
+        translate([0, 0, -1])
+            cylinder(d = 14, h = 4);
     }
 }
 
