@@ -242,6 +242,9 @@ module rotating_drum() {
                 cylinder(d = 4.1, h = 14);
             translate([toroid_od/2 + 10, 0, hub_depth - wall - 8.5])
                 rotate([0, 0, 30]) cylinder(d = m4_nut_trap, h = 4, $fn=6);
+            // Slot for nut insertion from inside drum
+            translate([toroid_od/2 + 2, -3.5, hub_depth - wall - 8.5])
+                cube([8, 7, 4]);
         }
 }
 
