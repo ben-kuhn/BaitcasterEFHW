@@ -229,6 +229,20 @@ module rotating_drum() {
         translate([0, 0, -1])
             cylinder(d = 14, h = 4);
     }
+
+    // INTERNAL NUT REINFORCEMENT - ring around each nut pocket
+    // Adds material for better nut retention without blocking the pocket
+    for(i = [0:120:359]) rotate([0, 0, i])
+        difference() {
+            // Ring around nut pocket area
+            translate([toroid_od/2 + 10, 0, hub_depth - wall - 12])
+                cylinder(d = 16, h = 12);
+            // Cut out center to match original nut trap and screw hole
+            translate([toroid_od/2 + 10, 0, hub_depth - wall - 13])
+                cylinder(d = 4.1, h = 14);
+            translate([toroid_od/2 + 10, 0, hub_depth - wall - 8.5])
+                rotate([0, 0, 30]) cylinder(d = m4_nut_trap, h = 4, $fn=6);
+        }
 }
 
 // ========================================
