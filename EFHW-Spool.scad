@@ -140,6 +140,14 @@ module rotating_drum() {
             // BEARING REINFORCEMENT - thicker base around bearing seat
             cylinder(d = bearing_seat + 12, h = wall + 3);
 
+            // BEARING RETENTION RING - ring-shaped shoulder at bottom of bearing seat
+            // Outer diameter matches bearing seat, inner opening for axle
+            difference() {
+                cylinder(d = bearing_seat, h = 1);  // Outer matches bearing seat
+                translate([0, 0, -0.5])
+                    cylinder(d = 12, h = 2);  // 12mm inner opening for axle
+            }
+
             // ALIGNMENT PEGS (2 pegs at 90° and 270° to avoid M4 holes and zip-tie slots)
             for(a = [90, 270]) rotate([0, 0, a])
                 translate([toroid_od/2 + 10, 0, hub_depth - wall])
@@ -171,13 +179,10 @@ module rotating_drum() {
         translate([0, 0, wall])
             cylinder(d = toroid_od + 18, h = hub_depth + 10);
 
-        // Bearing seat with retention shoulder
+        // Bearing seat - full cut, retention ring added in union block above
         // 608zz bearing: 22mm OD, 8mm ID, 7mm wide
-        // Bottom opening larger than bearing ID (8mm) but smaller than OD (22mm) for retention
-        translate([0, 0, -1])
-            cylinder(d = 12, h = 2);  // Retention opening: 12mm (bearing can't fall through)
         translate([0, 0, 1])
-            cylinder(d = bearing_seat, h = wall + 6);  // Bearing seat from Z=1 up
+            cylinder(d = bearing_seat, h = wall + 6);  // Bearing seat starts above retention ring
 
         // TRIANGULAR COOLING VENTS around bearing (narrow near bearing, wide at outer edge)
         for(v = [0:60:359]) rotate([0, 0, v])
