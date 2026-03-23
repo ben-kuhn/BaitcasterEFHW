@@ -172,8 +172,12 @@ module rotating_drum() {
             cylinder(d = toroid_od + 18, h = hub_depth + 10);
 
         // Bearing seat at bottom (material-specific)
+        // 608zz bearing is 7mm wide - seat is 7mm deep with shoulder to retain bearing
         translate([0, 0, -1])
-            cylinder(d = bearing_seat, h = wall + 2);
+            cylinder(d = bearing_seat, h = 8);  // 7mm seat + 1mm for Z=-1 start
+        // Axle bore continues through (M8 clearance)
+        translate([0, 0, -1])
+            cylinder(d = m8_bore, h = wall + 2);
 
         // TRIANGULAR COOLING VENTS around bearing (narrow near bearing, wide at outer edge)
         for(v = [0:60:359]) rotate([0, 0, v])
