@@ -173,11 +173,11 @@ module rotating_drum() {
 
         // Bearing seat with minimal retention shoulder on frame side
         // 608zz bearing: 22mm OD, 8mm ID, 7mm wide
-        // Small shoulder retains bearing while exposing most of bearing face for smooth rotation
+        // Thin 1mm shoulder retains bearing, rest is open for smooth rotation
         translate([0, 0, -1])
-            cylinder(d = 20, h = 3);  // Retention opening: 20mm (1mm lip around 22mm bearing)
-        translate([0, 0, 2])
-            cylinder(d = bearing_seat, h = wall + 4);  // Bearing seat starts above lip
+            cylinder(d = 20, h = 2);  // Z=-1 to Z=1: retention opening (20mm)
+        translate([0, 0, 1])
+            cylinder(d = bearing_seat, h = wall + 6);  // Z=1 onwards: full bearing seat
 
         // TRIANGULAR COOLING VENTS around bearing (narrow near bearing, wide at outer edge)
         for(v = [0:60:359]) rotate([0, 0, v])
