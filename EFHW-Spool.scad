@@ -90,7 +90,7 @@ module left_frame_cage() {
             // M8 Nut Trap - now in reinforced center
             translate([0, 0, -clearance - 1]) {
                 cylinder(d = m8_bore, h = wall + 5);
-                rotate([0, 0, 30]) cylinder(d = 14.3, h = 4.5, $fn=6);
+                rotate([0, 0, 30]) cylinder(d = 15.5, h = 5, $fn=6);  // M8 nut: 13mm flats = ~15mm points
             }
 
             // Frame Vents in Y-arms (not in handle arm)
@@ -171,13 +171,14 @@ module rotating_drum() {
         translate([0, 0, wall])
             cylinder(d = toroid_od + 18, h = hub_depth + 10);
 
-        // Bearing seat at bottom (material-specific)
-        // 608zz bearing is 7mm wide - seat is 7mm deep with shoulder to retain bearing
+        // Bearing seat with retention shoulder on frame side
+        // 608zz bearing is 7mm wide - inserted from inside drum, retained by shoulder at bottom
+        // M8 bore at very bottom creates retention lip
         translate([0, 0, -1])
-            cylinder(d = bearing_seat, h = 8);  // 7mm seat + 1mm for Z=-1 start
-        // Axle bore continues through (M8 clearance)
-        translate([0, 0, -1])
-            cylinder(d = m8_bore, h = wall + 2);
+            cylinder(d = m8_bore, h = wall + 5);  // M8 bore through entire base
+        // Bearing seat opens from inside (starts 1mm up to create shoulder)
+        translate([0, 0, 1])
+            cylinder(d = bearing_seat, h = wall + 3);  // Opens into drum interior
 
         // TRIANGULAR COOLING VENTS around bearing (narrow near bearing, wide at outer edge)
         for(v = [0:60:359]) rotate([0, 0, v])
