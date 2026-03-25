@@ -85,12 +85,14 @@ module left_frame_cage() {
                 }
             }
 
-            // M8 axle bore and nut trap (nut on bottom, away from drum)
-            translate([0, 0, -hub_radius - 1]) {
-                cylinder(d = m8_bore, h = hub_radius + 3);
-                // Nut trap on bottom (rounded side, away from drum)
-                rotate([0, 0, 30]) cylinder(d = 15.5, h = 5, $fn=6);
-            }
+            // M8 axle bore - goes all the way through
+            translate([0, 0, -hub_radius - 1])
+                cylinder(d = m8_bore, h = hub_radius * 2);
+
+            // M8 nut trap on bottom (rounded side, away from drum)
+            // M8 nut is ~6.5mm thick, make pocket 7mm deep
+            translate([0, 0, -hub_radius - 1])
+                rotate([0, 0, 30]) cylinder(d = 15.5, h = 7, $fn=6);
 
             // M3 screw holes for pillar mounting
             for(a = [0, 120, 240]) rotate([0, 0, a])
