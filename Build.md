@@ -133,6 +133,9 @@ Before deploying wire, perform a continuity check with a multimeter:
 | **Frame** | 1 | Print flat side (drum contact) down |
 | **Drum** | 1 | Print bearing-side down |
 | **Cap** | 1 | Print flat side down |
-| **Guard Pillar (plain)** | 2 | For 0° and 240° positions |
-| **Guard Pillar (eyelet)** | 1 | For 120° position, has wire guide |
+| **Guard Pillar (plain)** | 2 | For two of the three pillar positions |
+| **Guard Pillar (eyelet)** | 1 | Has wire guide for antenna deployment |
 | **Pillar Rim** | 1 | Optional, for extra rigidity |
+
+### Left-Handed Configuration
+The eyelet pillar (wire guide) can be installed at either the 120° or 240° position depending on user preference. For left-handed operation, install the eyelet pillar on the opposite side from the default configuration. The two plain pillars fill the remaining positions.
