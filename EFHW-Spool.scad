@@ -97,10 +97,13 @@ module left_frame_cage() {
                 rotate([0, 0, 30]) cylinder(d = 15.5, h = 7, $fn=6);
 
             // M3 screw holes for pillar mounting
-            // Arms extend from Z = -radius*1.5 to Z = 0
-            for(a = [0, 120, 240]) rotate([0, 0, a])
+            // Short arms (120°, 240°) use short_arm_radius
+            for(a = [120, 240]) rotate([0, 0, a])
                 translate([pillar_radius, 0, -short_arm_radius * 1.5 - 1])
                     cylinder(d = 4.0, h = short_arm_radius * 1.5 + 2);
+            // Long arm (0°) uses long_arm_radius
+            translate([pillar_radius, 0, -long_arm_radius * 1.5 - 1])
+                cylinder(d = 4.0, h = long_arm_radius * 1.5 + 2);
         }
     }
 }
