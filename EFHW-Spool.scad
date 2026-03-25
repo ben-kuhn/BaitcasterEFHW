@@ -430,7 +430,7 @@ module guard_pillar(with_eyelet = false) {
             // M3 screw hole at bottom end - through center of pillar thickness
             translate([-1, center_y, pillar_dia/4])
                 rotate([0, 90, 0])
-                    cylinder(d = 3.5, h = flare_len + 2);
+                    cylinder(d = 4.0, h = flare_len + 2);
 
             // M3 nut pocket at bottom - hex axis along X, flats at top/bottom
             translate([flare_len/2 - 1.5, center_y, pillar_dia/4])
@@ -445,7 +445,7 @@ module guard_pillar(with_eyelet = false) {
             // M3 screw hole at top end - through center of pillar thickness
             translate([pillar_height - flare_len - 1, center_y, pillar_dia/4])
                 rotate([0, 90, 0])
-                    cylinder(d = 3.5, h = flare_len + 2);
+                    cylinder(d = 4.0, h = flare_len + 2);
 
             // M3 nut pocket at top - hex axis along X, flats at top/bottom
             translate([pillar_height - flare_len/2 - 1.5, center_y, pillar_dia/4])
