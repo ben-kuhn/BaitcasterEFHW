@@ -28,7 +28,7 @@ The heart of the system is the broadband transformer. For 100W operation, we uti
 ## 2. Electrical Preparation (Cap Side)
 
 1. **Mount BNC:** Install the **BNC Bulkhead** in the center hole of the Master Cap.
-2. **Solder Capacitor:** Bridge the **100pF 3kV capacitor** directly across the BNC connector (Center Pin to Shield/Ground).
+2. **Solder Capacitor (Optional):** Bridge the **100pF 3kV capacitor** directly across the BNC connector (Center Pin to Shield/Ground). This can help with impedance matching on some bands but is not strictly required.
 3. **Ground Pigtail:** Install the **M5 Ground Bolt** in the offset hole with a ring terminal and nut. Attach a short wire pigtail (15-20cm) with a quick-connect terminal (spade, Anderson PowerPole, or similar) on the free end. This allows easy attachment of counterpoise wires without rotating hardware near the BNC connector.
 4. **Internal Grounding:** Run a heavy gauge jumper wire or copper braid from the Ground Bolt ring terminal to the BNC Shield terminal.
 5. **Internal Lead:** Solder a flexible jumper wire (approx. 10cm) to the "End" of the transformer secondary.
@@ -115,7 +115,7 @@ Before deploying wire, perform a continuity check with a multimeter:
 | :--- | :--- | :--- |
 | **Toroid** | 1 | FT240-43 Ferrite Core |
 | **Connector** | 1 | BNC Female Bulkhead (D-flat style) |
-| **Capacitor** | 1 | 100pF 3kV Ceramic Disc |
+| **Capacitor** | 1 | 100pF 3kV Ceramic Disc (optional) |
 | **Magnet Wire** | ~1m | 18 AWG Enameled Copper |
 
 ### Miscellaneous

@@ -54,7 +54,7 @@ A 3D-printed "baitcasting-style" reel for End-Fed Half-Wave (EFHW) antenna deplo
 |------|-----|---------------|
 | Toroid | 1 | FT240-43 ferrite core |
 | BNC Connector | 1 | Female bulkhead, D-flat style |
-| Capacitor | 1 | 100pF 3kV ceramic disc |
+| Capacitor | 1 | 100pF 3kV ceramic disc (optional) |
 | Magnet Wire | ~1m | 18 AWG enameled copper |
 | Zip Ties | 5-6 | Small, UV-resistant |
 
