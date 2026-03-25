@@ -38,7 +38,7 @@ A 3D-printed "baitcasting-style" reel for End-Fed Half-Wave (EFHW) antenna deplo
 | Pillar Nuts | 6 | M3 hex nuts |
 | Rim Screws | 3 | M3 x 8mm hex cap screws (optional) |
 | Binding Post | 1 | M4 x 20mm screw + nut/wingnut |
-| Ground Lug | 1 | M5 x 15mm bolt + wingnut |
+| Ground Bolt | 1 | M5 x 10mm bolt + nut (for pigtail) |
 
 ### Bearings & Washers
 

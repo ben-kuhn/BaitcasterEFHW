@@ -27,10 +27,11 @@ The heart of the system is the broadband transformer. For 100W operation, we uti
 
 ## 2. Electrical Preparation (Cap Side)
 
-1. **Mount Connectors:** Install the **BNC Bulkhead** in the center hole of the Master Cap and the **M5 Ground Bolt** in the offset hole.
+1. **Mount BNC:** Install the **BNC Bulkhead** in the center hole of the Master Cap.
 2. **Solder Capacitor:** Bridge the **100pF 3kV capacitor** directly across the BNC connector (Center Pin to Shield/Ground).
-3. **Grounding:** Run a heavy gauge jumper wire or copper braid from the Ground Lug to the BNC Shield terminal.
-4. **Internal Lead:** Solder a flexible jumper wire (approx. 10cm) to the "End" of the transformer secondary.
+3. **Ground Pigtail:** Install the **M5 Ground Bolt** in the offset hole with a ring terminal and nut. Attach a short wire pigtail (15-20cm) with a quick-connect terminal (spade, Anderson PowerPole, or similar) on the free end. This allows easy attachment of counterpoise wires without rotating hardware near the BNC connector.
+4. **Internal Grounding:** Run a heavy gauge jumper wire or copper braid from the Ground Bolt ring terminal to the BNC Shield terminal.
+5. **Internal Lead:** Solder a flexible jumper wire (approx. 10cm) to the "End" of the transformer secondary.
 
 ---
 
@@ -97,7 +98,8 @@ Before deploying wire, perform a continuity check with a multimeter:
 | **Rim Nuts** | 3 | M3 Stainless Hex Nuts (optional) |
 | **Binding Post Screw** | 1 | M4 x 20mm Stainless Screw (Spool Exit) |
 | **Binding Post Nut** | 1 | M4 Stainless Nut or Wingnut (External) |
-| **Ground Hardware** | 1 | M5 x 15mm Bolt + Wingnut |
+| **Ground Bolt** | 1 | M5 x 10mm Bolt + Nut + Ring Terminal |
+| **Ground Pigtail** | 1 | 15-20cm wire with quick-connect (spade/PowerPole) |
 
 ### Bearings & Washers
 

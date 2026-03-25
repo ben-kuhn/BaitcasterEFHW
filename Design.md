@@ -53,7 +53,7 @@ The cap houses all RF connections and mounts the transformer.
 * **Flat Disc Design:** 4mm thick, 120mm diameter.
 * **Alignment Peg Holes:** Match drum pegs for precise registration.
 * **BNC Connector:** D-shaped hole (9.5mm dia, 8.4mm flat-to-edge) with counterbore.
-* **Ground Lug:** 5.3mm hole at 14mm radius (inside toroid center opening).
+* **Ground Bolt:** 5.3mm hole at 14mm radius (inside toroid center opening). Uses pigtail with quick-connect for counterpoise.
 * **Zip-Tie Slots:** Six slots for toroid mounting (10-16mm and 33-39mm radii).
 * **Crank Handle:** Tapered cylinder at 85° for retrieval.
 * **Cooling Vents:** Triangular vents for heat dissipation.
@@ -105,7 +105,7 @@ The design employs **Triple-Zone Ventilation**:
 | **Cap Nuts** | 3x M3 Hex Nuts | Captured in Drum |
 | **Pillar Screws** | 6x M3 x 10mm Machine Screws | Pillar-to-Frame (and rim) |
 | **Pillar Nuts** | 6x M3 Hex Nuts | Captured in Pillars |
-| **Ground Lug** | M5 x 15mm Bolt + Wingnut | Counterpoise Connection |
+| **Ground Bolt** | M5 x 10mm Bolt + Nut | Counterpoise Pigtail Attachment |
 | **RF Input** | BNC Bulkhead (Female, D-flat) | Coaxial Interface |
 
 ---
