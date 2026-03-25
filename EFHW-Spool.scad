@@ -456,7 +456,8 @@ module guard_pillar(with_eyelet = false) {
 //     - Print 1x eyelet pillar (120° position, has wire guide)
 // All parts fit on a standard 220x220mm bed when printed individually.
 
-left_frame_cage();
+translate([0, 0, -20])  // Shifted down for easier viewing
+    left_frame_cage();
 rotating_drum();
 master_cap();
 pillar_rim();                    // Optional - print separately if desired
