@@ -19,7 +19,7 @@ The heart of the system is the broadband transformer. For 100W operation, we uti
 2. **The Common Tap:** After the 2nd turn, create a small loop or twist in the wire. This is your Common (Ground) connection.
 3. **The Secondary:** Continue winding the same wire for another **12 turns** (14 turns total).
 4. **The Crossover (Fair-Rite Method):** After the 7th turn of the secondary, cross the wire over to the opposite side of the toroid before finishing the final 7 turns. This maximizes bandwidth and reduces heat.
-5. **Mounting:** Place the toroid on the inside face of the **Master Cap**. Thread zip ties through the integrated tunnels and cinch the toroid firmly.
+5. **Mounting:** Place the toroid on the inside face of the **Master Cap**. Thread zip ties through the integrated slots and cinch the toroid firmly.
 
 
 
@@ -37,31 +37,34 @@ The heart of the system is the broadband transformer. For 100W operation, we uti
 ## 3. Mechanical Assembly
 
 ### Step 1: Hardware Preparation
-* **Frame:** Press-fit the **M8 Nut** into the hexagonal recess in the center hub.
-* **Drum:** Press the **608zz Bearing** into the center seat of the spool.
-* **Drum Nut Pockets:** Drop **3x M4 Nuts** into the pockets inside the drum's rim (at 0°, 120°, 240°).
+* **Frame:** Press-fit the **M8 Nut** into the hexagonal recess on the bottom of the center hub.
+* **Drum:** Press the **608zz Bearing** into the center seat of the spool. Place a **small washer (M8)** on each side of the bearing.
+* **Drum Nut Pockets:** Slide **3x M3 Nuts** into the pockets inside the drum (at 0°, 120°, 240°) through the insertion slots.
 * **Binding Post:** Insert an **M4 x 20mm Stainless Screw** through the spool exit port from the inside out. Secure it on the outside with a nut or wingnut. This is your antenna wire connection point.
-* **Optional Rim Nuts:** If using the pillar rim, slide **3x M4 Nuts** into the slots at the top of each pillar.
+* **Pillars:** Attach the three guard pillars to the frame using **M3 screws and nuts**. One pillar includes the wire eyelet.
+* **Optional Rim:** If using the pillar rim, install **M3 nuts** in the slots at the top of each pillar.
 
 ### Step 2: The "Marriage" (Axle Installation)
-Because the axle bolt is inside the hub, it must be installed before the cap is closed.
-1. Pass the **M8 x 65mm Bolt** through the center of the **Master Cap** (from the inside out).
-2. Align the **Master Cap** against the **Rotating Drum**, matching the alignment pegs (at 90° and 270°) to their holes.
-3. Pass the bolt through the drum's bearing.
-4. Thread the bolt into the **Stationary Frame** center hub.
-5. **Tighten:** Use a **deep-well socket** inside the open hub to tighten the M8 bolt. Ensure the assembly spins freely on the bearing with no lateral play.
+Because the axle bolt passes through the entire assembly, washers are used to ensure smooth rotation and proper spacing.
+1. Place the **large fender washer** inside the drum, over the bearing.
+2. Pass the **M8 x 65mm Bolt** through the center of the **Master Cap** (from the inside out).
+3. Align the **Master Cap** against the **Rotating Drum**, matching the alignment pegs (at 90° and 270°) to their holes.
+4. Pass the bolt through the fender washer and the drum's bearing.
+5. Place a **small spacing washer** on the bolt between the drum and the frame.
+6. Thread the bolt into the **Stationary Frame** center hub (nut is on the bottom).
+7. **Tighten:** Ensure the assembly spins freely on the bearing with no lateral play. The spacing washer prevents the drum from rubbing against the frame.
 
 ### Step 3: Final Wiring & Closure
 1. Solder the internal jumper wire from the transformer secondary to the head of the **Binding Post screw** inside the drum.
 2. Carefully tuck the wires to avoid contact with the rotating axle bolt.
-3. Align the Master Cap with the drum's M4 nut pockets (at 0°, 120°, 240°).
-4. Insert the **3x M4 x 16mm screws** through the cap and tighten to seal the hub.
+3. Align the Master Cap with the drum's M3 nut pockets (at 0°, 120°, 240°).
+4. Insert the **3x M3 x 12mm screws** through the cap and tighten to seal the hub.
 
 ### Step 4: Optional Pillar Rim Installation
-The pillars are integrated into the frame. For additional rigidity, install the optional rim:
-1. Ensure **M4 nuts** are inserted into the slots at the top of each pillar.
+For additional rigidity, install the optional rim:
+1. Ensure **M3 nuts** are inserted into the slots at the top of each pillar.
 2. Place the **pillar rim** over the pillars, aligning the screw holes.
-3. Insert **3x M4 x 12mm screws** through the rim into the captured nuts.
+3. Insert **3x M3 x 8mm screws** through the rim into the captured nuts.
 4. Tighten evenly.
 
 ---
@@ -80,26 +83,56 @@ Before deploying wire, perform a continuity check with a multimeter:
 
 ## 5. Bill of Materials (BOM)
 
+### Fasteners
+
 | Item | Quantity | Specification |
 | :--- | :--- | :--- |
-| **Main Bearing** | 1 | 608zz Skateboard Bearing |
 | **Main Axle** | 1 | M8 x 65mm Stainless Bolt |
 | **Axle Nut** | 1 | M8 Stainless Hex Nut |
-| **Cap Closure Screws** | 3 | M4 x 16mm Stainless Machine Screws |
-| **Captured Cap Nuts** | 3 | M4 Stainless Hex Nuts |
-| **Rim Screws** | 3 | M4 x 12mm Stainless Machine Screws (optional) |
-| **Rim Nuts** | 3 | M4 Stainless Hex Nuts (optional) |
+| **Cap Closure Screws** | 3 | M3 x 12mm Stainless Machine Screws |
+| **Captured Cap Nuts** | 3 | M3 Stainless Hex Nuts |
+| **Pillar Screws (Frame)** | 3 | M3 x 10mm Stainless Machine Screws |
+| **Pillar Nuts (Frame)** | 3 | M3 Stainless Hex Nuts |
+| **Rim Screws** | 3 | M3 x 8mm Stainless Machine Screws (optional) |
+| **Rim Nuts** | 3 | M3 Stainless Hex Nuts (optional) |
 | **Binding Post Screw** | 1 | M4 x 20mm Stainless Screw (Spool Exit) |
 | **Binding Post Nut** | 1 | M4 Stainless Nut or Wingnut (External) |
 | **Ground Hardware** | 1 | M5 x 15mm Bolt + Wingnut |
+
+### Bearings & Washers
+
+| Item | Quantity | Specification |
+| :--- | :--- | :--- |
+| **Main Bearing** | 1 | 608zz Skateboard Bearing (8x22x7mm) |
+| **Bearing Washers** | 2 | M8 Flat Washers (on each side of bearing) |
+| **Fender Washer** | 1 | M8 x 24mm OD Fender Washer (inside drum) |
+| **Spacing Washer** | 1 | M8 Flat Washer (between drum and frame) |
+
+### Electronics
+
+| Item | Quantity | Specification |
+| :--- | :--- | :--- |
 | **Toroid** | 1 | FT240-43 Ferrite Core |
 | **Connector** | 1 | BNC Female Bulkhead (D-flat style) |
+| **Capacitor** | 1 | 100pF 3kV Ceramic Disc |
+| **Magnet Wire** | ~1m | 18 AWG Enameled Copper |
+
+### Miscellaneous
+
+| Item | Quantity | Specification |
+| :--- | :--- | :--- |
+| **Toroid Zip Ties** | 3 | Small UV-resistant (for securing toroid) |
+| **Wire Zip Ties** | 2-3 | Small (for internal wire management) |
+
+---
 
 ## 6. Printed Parts
 
 | Part | Quantity | Notes |
 | :--- | :--- | :--- |
-| **Frame** | 1 | Includes integrated pillars and eyelet |
+| **Frame** | 1 | Print flat side (drum contact) down |
 | **Drum** | 1 | Print bearing-side down |
 | **Cap** | 1 | Print flat side down |
+| **Guard Pillar (plain)** | 2 | For 0° and 240° positions |
+| **Guard Pillar (eyelet)** | 1 | For 120° position, has wire guide |
 | **Pillar Rim** | 1 | Optional, for extra rigidity |
