@@ -85,12 +85,11 @@ module left_frame_cage() {
                 }
             }
 
-            // M8 axle bore and nut trap (on bed side when printing)
+            // M8 axle bore and nut trap (nut on bottom, away from drum)
             translate([0, 0, -hub_radius - 1]) {
                 cylinder(d = m8_bore, h = hub_radius + 3);
-                // Nut trap on top surface (bed side)
-                translate([0, 0, hub_radius + 1 - 4])
-                    rotate([0, 0, 30]) cylinder(d = 15.5, h = 6, $fn=6);
+                // Nut trap on bottom (rounded side, away from drum)
+                rotate([0, 0, 30]) cylinder(d = 15.5, h = 5, $fn=6);
             }
 
             // M3 screw holes for pillar mounting
