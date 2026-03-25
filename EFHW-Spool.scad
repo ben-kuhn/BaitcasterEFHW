@@ -35,48 +35,79 @@ echo(str("Wall thickness: ", wall, "mm"));
 // 1. THE STATIONARY FRAME (Y-Shaped Tubular with Integrated Handle)
 // ========================================
 // Print with flat top (drum contact surface) against bed
+// Half-round tubes: flat on bed side, rounded underneath
 module left_frame_cage() {
-    arm_diameter = 20;  // Diameter of tubular arms
+    arm_radius = 10;  // Radius of tubular arms (half-round profile)
+
+    // Half-round tube segment - flat on top (Z=0), round underneath
+    module half_tube(length, radius) {
+        translate([0, 0, -radius])
+            rotate([-90, 0, 0])
+                intersection() {
+                    cylinder(r = radius, h = length, $fn = 40);
+                    translate([-radius, 0, 0])
+                        cube([radius * 2, radius, length]);
+                }
+    }
 
     color("dodgerblue") {
         difference() {
             union() {
-                // Central hub
-                translate([0, 0, -clearance])
-                    cylinder(d = 30, h = wall);
+                // Central hub - half-sphere on bottom, flat on top
+                translate([0, 0, 0])
+                    intersection() {
+                        sphere(r = 15, $fn = 40);
+                        translate([-15, -15, -15])
+                            cube([30, 30, 15]);
+                    }
 
                 // Three tubular arms at 120° - arm at 0° extends into handle
                 for(a = [0, 120, 240]) rotate([0, 0, a])
                     hull() {
                         // Hub end
-                        translate([0, 0, -clearance])
-                            cylinder(d = arm_diameter, h = wall);
+                        intersection() {
+                            sphere(r = arm_radius, $fn = 30);
+                            translate([-arm_radius, -arm_radius, -arm_radius])
+                                cube([arm_radius * 2, arm_radius * 2, arm_radius]);
+                        }
                         // Pillar end
-                        translate([pillar_radius, 0, -clearance])
-                            cylinder(d = arm_diameter, h = wall);
+                        translate([pillar_radius, 0, 0])
+                            intersection() {
+                                sphere(r = arm_radius, $fn = 30);
+                                translate([-arm_radius, -arm_radius, -arm_radius])
+                                    cube([arm_radius * 2, arm_radius * 2, arm_radius]);
+                            }
                     }
 
                 // Handle extending from arm at 0°
                 hull() {
-                    translate([pillar_radius, 0, -clearance])
-                        cylinder(d = arm_diameter, h = wall);
-                    translate([pillar_radius + 50, 0, -clearance])
-                        cylinder(d = 16, h = wall);
+                    translate([pillar_radius, 0, 0])
+                        intersection() {
+                            sphere(r = arm_radius, $fn = 30);
+                            translate([-arm_radius, -arm_radius, -arm_radius])
+                                cube([arm_radius * 2, arm_radius * 2, arm_radius]);
+                        }
+                    translate([pillar_radius + 50, 0, 0])
+                        intersection() {
+                            sphere(r = 8, $fn = 30);
+                            translate([-8, -8, -8])
+                                cube([16, 16, 8]);
+                        }
                 }
             }
 
             // M8 axle bore and nut trap (on bed side when printing)
-            translate([0, 0, -clearance - 1]) {
-                cylinder(d = m8_bore, h = wall + 2);
+            translate([0, 0, -16]) {
+                cylinder(d = m8_bore, h = 18);
                 // Nut trap on top surface (bed side)
-                translate([0, 0, wall - 4])
+                translate([0, 0, 16 - 4])
                     rotate([0, 0, 30]) cylinder(d = 15.5, h = 6, $fn=6);
             }
 
             // M3 screw holes for pillar mounting
             for(a = [0, 120, 240]) rotate([0, 0, a])
-                translate([pillar_radius, 0, -clearance - 1])
-                    cylinder(d = 4.0, h = wall + 2);
+                translate([pillar_radius, 0, -arm_radius - 1])
+                    cylinder(d = 4.0, h = arm_radius + 2);
         }
     }
 }
