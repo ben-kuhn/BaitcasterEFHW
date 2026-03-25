@@ -56,7 +56,7 @@ Because the axle bolt passes through the entire assembly, washers are used to en
 7. **Tighten:** Secure with a nut or use a deep-well socket on the bolt head. Ensure the assembly spins freely on the bearing with no lateral play. The spacing washer prevents the drum from rubbing against the frame.
 
 ### Step 3: Final Wiring & Closure
-1. Solder the internal jumper wire from the transformer secondary to the head of the **Binding Post screw** inside the drum.
+1. Connect the transformer secondary lead to the binding post jumper using **spade connectors**. This allows the cap to be removed for future maintenance.
 2. Carefully tuck the wires to avoid contact with the rotating axle bolt.
 3. Align the Master Cap with the drum's M3 nut pockets (at 0°, 120°, 240°).
 4. Insert the **3x M3 x 12mm screws** through the cap and tighten to seal the hub.
