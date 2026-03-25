@@ -96,14 +96,21 @@ module left_frame_cage() {
             translate([0, 0, -hub_radius * 1.5 - 1])
                 rotate([0, 0, 30]) cylinder(d = 15.5, h = 7, $fn=6);
 
-            // M3 screw holes for pillar mounting
+            // M3 screw holes for pillar mounting with countersink for hex cap heads
             // Short arms (120°, 240°) use short_arm_radius
-            for(a = [120, 240]) rotate([0, 0, a])
+            for(a = [120, 240]) rotate([0, 0, a]) {
                 translate([pillar_radius, 0, -short_arm_radius * 1.5 - 1])
-                    cylinder(d = 4.0, h = short_arm_radius * 1.5 + 2);
+                    cylinder(d = 3.5, h = short_arm_radius * 1.5 + 2);
+                // Countersink for M3 hex cap head (6mm dia, 3mm deep)
+                translate([pillar_radius, 0, -short_arm_radius * 1.5 - 1])
+                    cylinder(d = 6, h = 3);
+            }
             // Long arm (0°) uses long_arm_radius
             translate([pillar_radius, 0, -long_arm_radius * 1.5 - 1])
-                cylinder(d = 4.0, h = long_arm_radius * 1.5 + 2);
+                cylinder(d = 3.5, h = long_arm_radius * 1.5 + 2);
+            // Countersink for M3 hex cap head
+            translate([pillar_radius, 0, -long_arm_radius * 1.5 - 1])
+                cylinder(d = 6, h = 3);
         }
     }
 }
@@ -322,10 +329,14 @@ module pillar_rim() {
                     cylinder(d = (pillar_radius - rim_width/2) * 2, h = rim_thickness + 2);
             }
 
-            // M3 screw holes at each pillar position
-            for(a = [0, 120, 240]) rotate([0, 0, a])
+            // M3 screw holes at each pillar position with countersink
+            for(a = [0, 120, 240]) rotate([0, 0, a]) {
                 translate([pillar_radius, 0, -1])
-                    cylinder(d = 4.0, h = rim_thickness + 2);
+                    cylinder(d = 3.5, h = rim_thickness + 2);
+                // Countersink for M3 hex cap head (6mm dia, 3mm deep)
+                translate([pillar_radius, 0, -1])
+                    cylinder(d = 6, h = 3);
+            }
         }
     }
 }
@@ -419,7 +430,7 @@ module guard_pillar(with_eyelet = false) {
             // M3 screw hole at bottom end - through center of pillar thickness
             translate([-1, center_y, pillar_dia/4])
                 rotate([0, 90, 0])
-                    cylinder(d = 4.0, h = flare_len + 2);
+                    cylinder(d = 3.5, h = flare_len + 2);
 
             // M3 nut pocket at bottom - hex axis along X, flats at top/bottom
             translate([flare_len/2 - 1.5, center_y, pillar_dia/4])
@@ -434,7 +445,7 @@ module guard_pillar(with_eyelet = false) {
             // M3 screw hole at top end - through center of pillar thickness
             translate([pillar_height - flare_len - 1, center_y, pillar_dia/4])
                 rotate([0, 90, 0])
-                    cylinder(d = 4.0, h = flare_len + 2);
+                    cylinder(d = 3.5, h = flare_len + 2);
 
             // M3 nut pocket at top - hex axis along X, flats at top/bottom
             translate([pillar_height - flare_len/2 - 1.5, center_y, pillar_dia/4])
