@@ -18,7 +18,7 @@ The heart of the system is the broadband transformer. For 100W operation, we uti
 1. **The Primary:** Wind the first **2 turns** around the toroid.
 2. **The Common Tap:** After the 2nd turn, create a small loop or twist in the wire. This is your Common (Ground) connection.
 3. **The Secondary:** Continue winding the same wire for another **12 turns** (14 turns total).
-4. **The Crossover (Fair-Rite Method):** After the 7th turn of the secondary, cross the wire over to the opposite side of the toroid before finishing the final 7 turns. This maximizes bandwidth and reduces heat.
+4. **The Crossover (Optional):** After the 7th turn of the secondary, cross the wire over to the opposite side of the toroid before finishing the final 7 turns. This can improve bandwidth but does increase losses slightly. Skip this step for maximum efficiency.
 5. **Mounting:** Place the toroid on the inside face of the **Master Cap**. Thread zip ties through the integrated slots and cinch the toroid firmly.
 
 
