@@ -41,14 +41,15 @@ module left_frame_cage() {
     long_arm_radius = 5;    // 10mm diameter for long leg + handle
     hub_radius = 12;        // Central hub
 
-    // 3/4 sphere - flat on top, rounded 3/4 of the way
+    // 3/4 sphere - flat on top at Z=0, rounded underneath
     module three_quarter_sphere(r) {
-        intersection() {
-            sphere(r = r, $fn = 30);
-            // Keep bottom 3/4: from -r to +r/2
-            translate([-r, -r, -r])
-                cube([r * 2, r * 2, r * 1.5]);
-        }
+        translate([0, 0, -r/2])  // Shift so flat surface is at Z=0
+            intersection() {
+                sphere(r = r, $fn = 30);
+                // Keep bottom 3/4: from -r to +r/2
+                translate([-r, -r, -r])
+                    cube([r * 2, r * 2, r * 1.5]);
+            }
     }
 
     color("dodgerblue") {
@@ -86,18 +87,20 @@ module left_frame_cage() {
             }
 
             // M8 axle bore - goes all the way through
-            translate([0, 0, -hub_radius - 1])
+            // Hub now extends from Z = -hub_radius*1.5 to Z = 0
+            translate([0, 0, -hub_radius * 1.5 - 1])
                 cylinder(d = m8_bore, h = hub_radius * 2);
 
             // M8 nut trap on bottom (rounded side, away from drum)
             // M8 nut is ~6.5mm thick, make pocket 7mm deep
-            translate([0, 0, -hub_radius - 1])
+            translate([0, 0, -hub_radius * 1.5 - 1])
                 rotate([0, 0, 30]) cylinder(d = 15.5, h = 7, $fn=6);
 
             // M3 screw holes for pillar mounting
+            // Arms extend from Z = -radius*1.5 to Z = 0
             for(a = [0, 120, 240]) rotate([0, 0, a])
-                translate([pillar_radius, 0, -short_arm_radius - 1])
-                    cylinder(d = 4.0, h = short_arm_radius + 3);
+                translate([pillar_radius, 0, -short_arm_radius * 1.5 - 1])
+                    cylinder(d = 4.0, h = short_arm_radius * 1.5 + 2);
         }
     }
 }
