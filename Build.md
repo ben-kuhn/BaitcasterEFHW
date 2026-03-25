@@ -47,13 +47,13 @@ The heart of the system is the broadband transformer. For 100W operation, we uti
 
 ### Step 2: The "Marriage" (Axle Installation)
 Because the axle bolt passes through the entire assembly, washers are used to ensure smooth rotation and proper spacing.
-1. Place the **large fender washer** inside the drum, over the bearing.
-2. Pass the **M8 x 65mm Bolt** through the center of the **Master Cap** (from the inside out).
-3. Align the **Master Cap** against the **Rotating Drum**, matching the alignment pegs (at 90° and 270°) to their holes.
-4. Pass the bolt through the fender washer and the drum's bearing.
-5. Place a **small spacing washer** on the bolt between the drum and the frame.
-6. Thread the bolt into the **Stationary Frame** center hub (nut is on the bottom).
-7. **Tighten:** Ensure the assembly spins freely on the bearing with no lateral play. The spacing washer prevents the drum from rubbing against the frame.
+1. Thread the **M8 x 65mm Bolt** into the **Stationary Frame** center hub (nut is on the bottom).
+2. Place the **spacing washer** on the bolt above the frame.
+3. Lower the **Rotating Drum** (bearing-side down) onto the bolt, passing it through the bearing.
+4. Place the **large fender washer** on the bolt inside the drum, over the bearing.
+5. Align the **Master Cap** against the **Rotating Drum**, matching the alignment pegs (at 90° and 270°) to their holes.
+6. Pass the bolt through the center of the **Master Cap**.
+7. **Tighten:** Secure with a nut or use a deep-well socket on the bolt head. Ensure the assembly spins freely on the bearing with no lateral play. The spacing washer prevents the drum from rubbing against the frame.
 
 ### Step 3: Final Wiring & Closure
 1. Solder the internal jumper wire from the transformer secondary to the head of the **Binding Post screw** inside the drum.
