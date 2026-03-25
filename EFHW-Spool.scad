@@ -32,90 +32,37 @@ echo(str("Bearing seat: ", bearing_seat, "mm"));
 echo(str("Wall thickness: ", wall, "mm"));
 
 // ========================================
-// 1. THE STATIONARY FRAME (Y-Shaped Base with Integrated Handle)
+// 1. THE STATIONARY FRAME (Round Base with Integrated Handle)
 // ========================================
+// Print with flat top (drum contact surface) against bed
 module left_frame_cage() {
     color("dodgerblue") {
         difference() {
             union() {
-                // Y-shaped base (3 arms at 120° apart) - saves filament vs circular
-                // Arm 1: Integrated with handle (longer and wider)
-                translate([0, -18, -clearance])
-                    cube([flange_d/2 + 85, 36, wall]);
-
-                // Arms 2 and 3: Standard width (extended to support pillars)
-                for(a = [120, 240]) rotate([0, 0, a]) {
-                    translate([0, -12, -clearance])
-                        cube([flange_d/2 + 16, 24, wall]);
-                }
-
-                // Reinforced center hub for axle - THICKER for strength
+                // Round base disc - extends to pillar mounting radius
                 translate([0, 0, -clearance])
-                    cylinder(d = 35, h = wall + 3);
+                    cylinder(d = pillar_radius * 2 + 14, h = wall);
 
-                // Triangular gussets for frame rigidity (offset to avoid vents/slots)
-                for(a = [0, 120, 240]) rotate([0, 0, a])
-                    hull() {
-                        // Tall end at hub (overlaps hub cylinder for full contact)
-                        translate([12, 5, -clearance])
-                            cube([2, 6, wall + 3]);
-                        // Tapers to base plate near pillar
-                        translate([flange_d/2 - 5, 5, -clearance])
-                            cube([2, 6, wall + 0.1]);
-                    }
-
-                // Pillar mounting bosses (pillars are now separate parts)
-                for(a = [0, 120, 240]) rotate([0, 0, a])
+                // Ergonomic handle extending from disc
+                hull() {
+                    // Where handle meets disc
                     translate([pillar_radius, 0, -clearance])
-                        cylinder(d = 14, h = wall);
-
-                // Ergonomic Handle with fully rounded edges (no sharp corners anywhere)
-                hull() {
-                    // Start of handle (near drum) - rounded top and bottom
-                    for(y = [-10, 10]) {
-                        translate([flange_d/2 + 15, y, -clearance + 2])
-                            sphere(r = 2, $fn = 20);
-                        translate([flange_d/2 + 15, y, -clearance + wall - 2])
-                            sphere(r = 2, $fn = 20);
-                    }
-                    // Grip end - rounded top and bottom
-                    for(y = [-8, 8]) {
-                        translate([flange_d/2 + 55, y, -clearance + 2])
-                            sphere(r = 2, $fn = 20);
-                        translate([flange_d/2 + 55, y, -clearance + wall - 2])
-                            sphere(r = 2, $fn = 20);
-                    }
+                        cylinder(d = 20, h = wall);
+                    // Grip end
+                    translate([pillar_radius + 50, 0, -clearance])
+                        cylinder(d = 16, h = wall);
                 }
             }
-            // M8 Nut Trap - now in reinforced center
+
+            // M8 axle bore and nut trap (on bed side when printing)
             translate([0, 0, -clearance - 1]) {
-                cylinder(d = m8_bore, h = wall + 5);
-                rotate([0, 0, 30]) cylinder(d = 15.5, h = 5, $fn=6);  // M8 nut: 13mm flats = ~15mm points
+                cylinder(d = m8_bore, h = wall + 2);
+                // Nut trap on top surface (bed side)
+                translate([0, 0, wall - 4])
+                    rotate([0, 0, 30]) cylinder(d = 15.5, h = 6, $fn=6);
             }
 
-            // Frame Vents in Y-arms (not in handle arm)
-            for(a = [120, 240]) rotate([0, 0, a])
-                translate([15, -5, -clearance - 1])
-                    cube([flange_d/2 - 25, 10, wall + 2]);
-
-            // LIGHTENING SLOTS in Y-arms - elongated ovals to save filament
-            for(a = [120, 240]) rotate([0, 0, a])
-                hull() {
-                    translate([25, -6, -clearance - 1])
-                        cylinder(d = 8, h = wall + 2, $fn = 20);
-                    translate([45, -6, -clearance - 1])
-                        cylinder(d = 8, h = wall + 2, $fn = 20);
-                }
-
-            // LIGHTENING SLOT in handle arm
-            hull() {
-                translate([flange_d/2 + 25, -6, -clearance - 1])
-                    cylinder(d = 8, h = wall + 2, $fn = 20);
-                translate([flange_d/2 + 45, -6, -clearance - 1])
-                    cylinder(d = 8, h = wall + 2, $fn = 20);
-            }
-
-            // M3 screw holes for pillar mounting (pillars are separate parts)
+            // M3 screw holes for pillar mounting
             for(a = [0, 120, 240]) rotate([0, 0, a])
                 translate([pillar_radius, 0, -clearance - 1])
                     cylinder(d = 4.0, h = wall + 2);
