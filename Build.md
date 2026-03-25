@@ -124,6 +124,8 @@ Before deploying wire, perform a continuity check with a multimeter:
 | :--- | :--- | :--- |
 | **Toroid Zip Ties** | 3 | Small UV-resistant (for securing toroid) |
 | **Wire Zip Ties** | 2-3 | Small (for internal wire management) |
+| **Spade Connectors** | 2 | For internal transformer lead connection |
+| **Quick-Connect** | 1 | Spade or Anderson PowerPole for counterpoise |
 
 ---
 

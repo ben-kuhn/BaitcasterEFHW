@@ -57,6 +57,8 @@ A 3D-printed "baitcasting-style" reel for End-Fed Half-Wave (EFHW) antenna deplo
 | Capacitor | 1 | 100pF 3kV ceramic disc (optional) |
 | Magnet Wire | ~1m | 18 AWG enameled copper |
 | Zip Ties | 5-6 | Small, UV-resistant |
+| Spade Connectors | 2 | For internal transformer lead |
+| Quick-Connect | 1 | Spade or PowerPole for counterpoise |
 
 ## Documentation
 
