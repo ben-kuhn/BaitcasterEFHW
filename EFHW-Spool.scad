@@ -129,15 +129,15 @@ module rotating_drum() {
             // Creates a 2mm thick ring to prevent bearing from sliding out
             cylinder(d = bearing_seat, h = 2);
 
-            // ALIGNMENT PEGS (2 pegs at 90° and 270° to avoid M4 holes and zip-tie slots)
+            // ALIGNMENT PEGS (2 pegs at 90° and 270° to avoid M3 holes and zip-tie slots)
             for(a = [90, 270]) rotate([0, 0, a])
                 translate([toroid_od/2 + 10, 0, hub_depth - wall])
                     cylinder(d = 5, h = 6);
 
-            // REINFORCEMENT BOSSES for M4 nut traps (thicken wall at these points)
+            // REINFORCEMENT BOSSES for M3 nut traps (thicken wall at these points)
             for(i = [0:120:359]) rotate([0, 0, i])
-                translate([toroid_od/2 + 10, 0, hub_depth - wall - 15])
-                    cylinder(d = 12, h = 15); // Solid boss around each nut trap
+                translate([toroid_od/2 + 10, 0, hub_depth - wall - 12])
+                    cylinder(d = 10, h = 12); // Solid boss around each nut trap
 
             // 6 spokes on BACK/BOTTOM (bearing side, close to frame)
             for(a = [0:60:359]) {
@@ -188,12 +188,12 @@ module rotating_drum() {
                     cylinder(d = 4.5, h = 25);
                 }
 
-        // M4 nut traps for cap attachment (at TOP of hub, aligned with bosses)
+        // M3 nut traps for cap attachment (at TOP of hub, aligned with bosses)
         for(i = [0:120:359]) rotate([0, 0, i]) {
-            translate([toroid_od/2 + 10, 0, hub_depth - wall - 12])
-                cylinder(d = 4.1, h = 15);
-            translate([toroid_od/2 + 10, 0, hub_depth - wall - 8.5])
-                rotate([0, 0, 30]) cylinder(d = m4_nut_trap, h = 4, $fn=6);
+            translate([toroid_od/2 + 10, 0, hub_depth - wall - 10])
+                cylinder(d = 3.4, h = 12);
+            translate([toroid_od/2 + 10, 0, hub_depth - wall - 6])
+                rotate([0, 0, 30]) cylinder(d = m3_nut_trap, h = 3, $fn=6);
         }
 
         // No cooling slots in rim - keeping it simple and consistent
@@ -220,16 +220,16 @@ module rotating_drum() {
     for(i = [0:120:359]) rotate([0, 0, i])
         difference() {
             // Ring around nut pocket area
-            translate([toroid_od/2 + 10, 0, hub_depth - wall - 12])
-                cylinder(d = 16, h = 12);
-            // Cut out center to match original nut trap and screw hole
-            translate([toroid_od/2 + 10, 0, hub_depth - wall - 13])
-                cylinder(d = 4.1, h = 14);
-            translate([toroid_od/2 + 10, 0, hub_depth - wall - 8.5])
-                rotate([0, 0, 30]) cylinder(d = m4_nut_trap, h = 4, $fn=6);
+            translate([toroid_od/2 + 10, 0, hub_depth - wall - 10])
+                cylinder(d = 14, h = 10);
+            // Cut out center to match M3 nut trap and screw hole
+            translate([toroid_od/2 + 10, 0, hub_depth - wall - 11])
+                cylinder(d = 3.4, h = 12);
+            translate([toroid_od/2 + 10, 0, hub_depth - wall - 6])
+                rotate([0, 0, 30]) cylinder(d = m3_nut_trap, h = 3, $fn=6);
             // Slot for nut insertion from inside drum
-            translate([toroid_od/2 + 2, -3.5, hub_depth - wall - 8.5])
-                cube([8, 7, 4]);
+            translate([toroid_od/2 + 2, -2.75, hub_depth - wall - 6])
+                cube([8, 5.5, 3]);
         }
 }
 
@@ -244,7 +244,7 @@ module master_cap() {
                 cylinder(d = flange_d, h = wall);
 
                 // Crank handle extending UP from outer edge (positioned to clear all mounting features)
-                rotate([0, 0, 85]) // Position at 85° - good clearance from M4 holes (0°,120°,240°) and zip-ties (60°,180°,300°)
+                rotate([0, 0, 85]) // Position at 85° - good clearance from M3 holes (0°,120°,240°) and zip-ties (60°,180°,300°)
                     translate([flange_d/2 - 20, 0, 0])
                         cylinder(d1 = 24, d2 = 18, h = 38);
             }
@@ -272,10 +272,10 @@ module master_cap() {
             translate([14, 0, -1])
                 cylinder(d = 5.3, h = wall + 2);
 
-            // M4 screw holes for attachment to drum (3 holes at 120°)
+            // M3 screw holes for attachment to drum (3 holes at 120°)
             for(i = [0:120:359]) rotate([0, 0, i])
                 translate([toroid_od/2 + 10, 0, -1])
-                    cylinder(d = 4.5, h = wall + 2);
+                    cylinder(d = 3.5, h = wall + 2);
 
             // Zip-tie slots for toroid mounting (in flat base)
             // Toroid: ID=36.35mm, OD=60.25mm, wire=1.3mm
@@ -286,7 +286,7 @@ module master_cap() {
             }
 
             // LARGE TRIANGULAR COOLING VENTS - fewer but bigger, concentrated at toroid
-            // Positioned between mounting features (avoid BNC, M4 holes, zip-ties)
+            // Positioned between mounting features (avoid BNC, M3 holes, zip-ties)
             for(v = [30, 150, 270]) rotate([0, 0, v])
                 hull() {
                     // Narrow end (just outside BNC/center area)
