@@ -32,23 +32,34 @@ echo(str("Bearing seat: ", bearing_seat, "mm"));
 echo(str("Wall thickness: ", wall, "mm"));
 
 // ========================================
-// 1. THE STATIONARY FRAME (Round Base with Integrated Handle)
+// 1. THE STATIONARY FRAME (Y-Shaped Tubular with Integrated Handle)
 // ========================================
 // Print with flat top (drum contact surface) against bed
 module left_frame_cage() {
+    arm_diameter = 20;  // Diameter of tubular arms
+
     color("dodgerblue") {
         difference() {
             union() {
-                // Round base disc - extends to pillar mounting radius
+                // Central hub
                 translate([0, 0, -clearance])
-                    cylinder(d = pillar_radius * 2 + 14, h = wall);
+                    cylinder(d = 30, h = wall);
 
-                // Ergonomic handle extending from disc
+                // Three tubular arms at 120° - arm at 0° extends into handle
+                for(a = [0, 120, 240]) rotate([0, 0, a])
+                    hull() {
+                        // Hub end
+                        translate([0, 0, -clearance])
+                            cylinder(d = arm_diameter, h = wall);
+                        // Pillar end
+                        translate([pillar_radius, 0, -clearance])
+                            cylinder(d = arm_diameter, h = wall);
+                    }
+
+                // Handle extending from arm at 0°
                 hull() {
-                    // Where handle meets disc
                     translate([pillar_radius, 0, -clearance])
-                        cylinder(d = 20, h = wall);
-                    // Grip end
+                        cylinder(d = arm_diameter, h = wall);
                     translate([pillar_radius + 50, 0, -clearance])
                         cylinder(d = 16, h = wall);
                 }
