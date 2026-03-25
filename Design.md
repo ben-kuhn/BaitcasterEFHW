@@ -99,7 +99,6 @@ The design employs **Triple-Zone Ventilation**:
 | **Central Axle** | M8 x 65mm Stainless Bolt | Main Rotation Axis |
 | **Axle Nut** | M8 Hex Nut | Captured in Frame |
 | **Main Bearing** | 608zz (8x22x7mm) | Friction Reduction |
-| **Bearing Washers** | 2x M8 Flat Washers | On each side of bearing |
 | **Fender Washer** | M8 x 24mm OD | Inside drum, over bearing |
 | **Spacing Washer** | M8 Flat Washer | Between drum and frame |
 | **Cap Screws** | 3x M3 x 12mm Machine Screws | Cap-to-Drum Closure |

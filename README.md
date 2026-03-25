@@ -45,7 +45,6 @@ A 3D-printed "baitcasting-style" reel for End-Fed Half-Wave (EFHW) antenna deplo
 | Item | Qty | Specification |
 |------|-----|---------------|
 | Main Bearing | 1 | 608zz (8x22x7mm) |
-| Bearing Washers | 2 | M8 flat washers |
 | Fender Washer | 1 | M8 x 24mm OD (inside drum) |
 | Spacing Washer | 1 | M8 flat washer (drum to frame) |
 

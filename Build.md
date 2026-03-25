@@ -38,7 +38,7 @@ The heart of the system is the broadband transformer. For 100W operation, we uti
 
 ### Step 1: Hardware Preparation
 * **Frame:** Press-fit the **M8 Nut** into the hexagonal recess on the bottom of the center hub.
-* **Drum:** Press the **608zz Bearing** into the center seat of the spool. Place a **small washer (M8)** on each side of the bearing.
+* **Drum:** Press the **608zz Bearing** into the center seat of the spool. The retention ring and support collar hold the bearing securely.
 * **Drum Nut Pockets:** Slide **3x M3 Nuts** into the pockets inside the drum (at 0°, 120°, 240°) through the insertion slots.
 * **Binding Post:** Insert an **M4 x 20mm Stainless Screw** through the spool exit port from the inside out. Secure it on the outside with a nut or wingnut. This is your antenna wire connection point.
 * **Pillars:** Attach the three guard pillars to the frame using **M3 screws and nuts**. One pillar includes the wire eyelet.
@@ -104,7 +104,6 @@ Before deploying wire, perform a continuity check with a multimeter:
 | Item | Quantity | Specification |
 | :--- | :--- | :--- |
 | **Main Bearing** | 1 | 608zz Skateboard Bearing (8x22x7mm) |
-| **Bearing Washers** | 2 | M8 Flat Washers (on each side of bearing) |
 | **Fender Washer** | 1 | M8 x 24mm OD Fender Washer (inside drum) |
 | **Spacing Washer** | 1 | M8 Flat Washer (between drum and frame) |
 
