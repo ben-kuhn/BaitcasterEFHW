@@ -342,7 +342,25 @@ module pillar_rim() {
 }
 
 // ========================================
-// 5. GUARD PILLAR (Printed Separately - need 2 plain, 1 with eyelet)
+// 5. BEARING SPACER (Printed - replaces washers)
+// ========================================
+// Fits in the retention ring hole, spaces drum from frame
+module bearing_spacer() {
+    spacer_od = 13.5;      // Fits loosely in 14mm retention hole
+    spacer_id = m8_bore;   // M8 bolt passes through
+    spacer_height = 4;     // Contacts bearing, spaces drum from frame
+
+    translate([-(flange_d + 40), -(flange_d/2 + 20), 0]) {
+        difference() {
+            cylinder(d = spacer_od, h = spacer_height);
+            translate([0, 0, -1])
+                cylinder(d = spacer_id, h = spacer_height + 2);
+        }
+    }
+}
+
+// ========================================
+// 6. GUARD PILLAR (Printed Separately - need 2 plain, 1 with eyelet)
 // ========================================
 module guard_pillar(with_eyelet = false) {
     pillar_dia = 10;          // Diameter of half-cylinder
@@ -464,11 +482,12 @@ module guard_pillar(with_eyelet = false) {
 // LAYOUT FOR SLICER
 // ========================================
 // Part dimensions (for 220x220mm print bed):
-//   Frame:       ~183mm x 132mm (print diagonally if needed)
-//   Drum:        120mm diameter
-//   Cap:         120mm diameter
-//   Pillar rim:  148mm diameter (optional)
-//   Guard pillar: ~71mm x 16mm x 5mm (print flat side down)
+//   Frame:         Y-shaped tubular (print flat side down)
+//   Drum:          120mm diameter
+//   Cap:           120mm diameter
+//   Pillar rim:    148mm diameter (optional)
+//   Bearing spacer: 13.5mm diameter x 4mm (print multiple as spares)
+//   Guard pillar:  ~55mm x 16mm (print flat side down)
 //     - Print 2x plain pillars (0° and 240° positions)
 //     - Print 1x eyelet pillar (120° position, has wire guide)
 // All parts fit on a standard 220x220mm bed when printed individually.
@@ -478,6 +497,7 @@ translate([0, 0, -20])  // Shifted down for easier viewing
 rotating_drum();
 master_cap();
 pillar_rim();                    // Optional - print separately if desired
+bearing_spacer();                // Replaces washers - print 1 (plus spares)
 guard_pillar(with_eyelet=false); // Print 2 of these (for 0° and 240° positions)
 translate([0, 30, 0])
     guard_pillar(with_eyelet=true);  // Print 1 of this (for 120° position, has wire guide)
