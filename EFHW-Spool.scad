@@ -32,11 +32,11 @@ echo(str("Bearing seat: ", bearing_seat, "mm"));
 echo(str("Wall thickness: ", wall, "mm"));
 
 // ========================================
-// 1. THE STATIONARY FRAME (Y-Shaped Tubular with Integrated Handle)
+// 1. THE HANDLE (Y-Shaped Tubular Frame)
 // ========================================
 // Print with flat top (drum contact surface) against bed
 // 3/4-round tubes: small flat on bed side, mostly rounded
-module left_frame_cage() {
+module handle() {
     short_arm_radius = 6.5;   // 13mm diameter for short legs
     long_arm_radius = 8;      // 16mm diameter for long leg + handle
     hub_radius = 12;        // Central hub
@@ -493,7 +493,7 @@ module guard_pillar(with_eyelet = false) {
 // All parts fit on a standard 220x220mm bed when printed individually.
 
 translate([0, 0, -20])  // Shifted down for easier viewing
-    left_frame_cage();
+    handle();
 rotating_drum();
 master_cap();
 pillar_rim();                    // Optional - print separately if desired
