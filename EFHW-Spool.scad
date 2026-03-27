@@ -96,7 +96,7 @@ module handle() {
             translate([0, 0, -hub_radius * 1.5 - 1])
                 rotate([0, 0, 30]) cylinder(d = 15.5, h = 7, $fn=6);
 
-            // M3 screw holes for pillar mounting with countersink for hex cap heads
+            // M3 screw holes for wire guard mounting with countersink for hex cap heads
             // Short arms (120°, 240°) use short_arm_radius
             for(a = [120, 240]) rotate([0, 0, a]) {
                 translate([pillar_radius, 0, -short_arm_radius * 1.5 - 1])
@@ -314,9 +314,9 @@ module master_cap() {
 }
 
 // ========================================
-// 4. OPTIONAL PILLAR RIM (Printed Separately)
+// 4. OPTIONAL GUARD RIM (Printed Separately)
 // ========================================
-module pillar_rim() {
+module guard_rim() {
     rim_thickness = 4;
     rim_width = 12;
 
@@ -329,7 +329,7 @@ module pillar_rim() {
                     cylinder(d = (pillar_radius - rim_width/2) * 2, h = rim_thickness + 2);
             }
 
-            // M3 screw holes at each pillar position with countersink
+            // M3 screw holes at each wire guard position with countersink
             for(a = [0, 120, 240]) rotate([0, 0, a]) {
                 translate([pillar_radius, 0, -1])
                     cylinder(d = 3.5, h = rim_thickness + 2);
@@ -360,9 +360,9 @@ module bearing_spacer() {
 }
 
 // ========================================
-// 6. GUARD PILLAR (Printed Separately - need 2 plain, 1 with eyelet)
+// 6. WIRE GUARD (Printed Separately - need 2 plain, 1 with eyelet)
 // ========================================
-module guard_pillar(with_eyelet = false) {
+module wire_guard(with_eyelet = false) {
     pillar_dia = 10;          // Diameter of half-cylinder
     flare_len = 8;            // Length of flared ends
     flare_dia = 16;           // Diameter at flared ends
@@ -485,19 +485,19 @@ module guard_pillar(with_eyelet = false) {
 //   Frame:         Y-shaped tubular (print flat side down)
 //   Drum:          120mm diameter
 //   Cap:           120mm diameter
-//   Pillar rim:    148mm diameter (optional)
-//   Bearing spacer: 13.5mm diameter x 4mm (print multiple as spares)
-//   Guard pillar:  ~55mm x 16mm (print flat side down)
-//     - Print 2x plain pillars (0° and 240° positions)
-//     - Print 1x eyelet pillar (120° position, has wire guide)
+//   Guard rim:     148mm diameter (optional)
+//   Bearing spacer: 13.5mm diameter x 6mm (print multiple as spares)
+//   Wire guard:    ~55mm x 16mm (print flat side down)
+//     - Print 2x plain wire guards (0° and 240° positions)
+//     - Print 1x eyelet wire guard (120° position, has wire guide)
 // All parts fit on a standard 220x220mm bed when printed individually.
 
 translate([0, 0, -20])  // Shifted down for easier viewing
     handle();
 rotating_drum();
 master_cap();
-pillar_rim();                    // Optional - print separately if desired
-bearing_spacer();                // Replaces washers - print 1 (plus spares)
-guard_pillar(with_eyelet=false); // Print 2 of these (for 0° and 240° positions)
+guard_rim();                     // Optional - print separately if desired
+bearing_spacer();                // Spaces drum from handle - print 1 (plus spares)
+wire_guard(with_eyelet=false);   // Print 2 of these (for 0° and 240° positions)
 translate([0, 30, 0])
-    guard_pillar(with_eyelet=true);  // Print 1 of this (for 120° position, has wire guide)
+    wire_guard(with_eyelet=true);  // Print 1 of this (for 120° position, has wire guide)

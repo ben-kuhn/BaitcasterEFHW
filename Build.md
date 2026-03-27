@@ -42,8 +42,8 @@ The heart of the system is the broadband transformer. For 100W operation, we uti
 * **Drum:** Press the **608zz Bearing** into the center seat of the spool. The retention ring and support collar hold the bearing securely.
 * **Drum Nut Pockets:** Slide **3x M3 Nuts** into the pockets inside the drum (at 0°, 120°, 240°) through the insertion slots.
 * **Binding Post:** Insert an **M4 x 20mm Stainless Screw** through the spool exit port from the inside out. Secure it on the outside with a nut or wingnut. This is your antenna wire connection point.
-* **Pillars:** Attach the three guard pillars to the frame using **M3 screws and nuts**. One pillar includes the wire eyelet.
-* **Optional Rim:** If using the pillar rim, install **M3 nuts** in the slots at the top of each pillar.
+* **Wire Guards:** Attach the three wire guards to the handle using **M3 screws and nuts**. One guard includes the wire eyelet.
+* **Optional Rim:** If using the guard rim, install **M3 nuts** in the slots at the top of each wire guard.
 
 ### Step 2: The "Marriage" (Axle Installation)
 The printed bearing spacer provides proper spacing between the drum and handle.
@@ -61,10 +61,10 @@ The printed bearing spacer provides proper spacing between the drum and handle.
 3. Align the Master Cap with the drum's M3 nut pockets (at 0°, 120°, 240°).
 4. Insert the **3x M3 x 12mm screws** through the cap and tighten to seal the hub.
 
-### Step 4: Optional Pillar Rim Installation
+### Step 4: Optional Guard Rim Installation
 For additional rigidity, install the optional rim:
-1. Ensure **M3 nuts** are inserted into the slots at the top of each pillar.
-2. Place the **pillar rim** over the pillars, aligning the screw holes.
+1. Ensure **M3 nuts** are inserted into the slots at the top of each wire guard.
+2. Place the **guard rim** over the wire guards, aligning the screw holes.
 3. Insert **3x M3 x 8mm screws** through the rim into the captured nuts.
 4. Tighten evenly.
 
@@ -92,8 +92,8 @@ Before deploying wire, perform a continuity check with a multimeter:
 | **Axle Nut** | 1 | M8 Stainless Hex Nut (lock nut recommended) |
 | **Cap Closure Screws** | 3 | M3 x 12mm Stainless Machine Screws |
 | **Captured Cap Nuts** | 3 | M3 Stainless Hex Nuts |
-| **Pillar Screws (Handle)** | 3 | M3 x 10mm Stainless Machine Screws |
-| **Pillar Nuts (Handle)** | 3 | M3 Stainless Hex Nuts |
+| **Wire Guard Screws (Handle)** | 3 | M3 x 10mm Stainless Machine Screws |
+| **Wire Guard Nuts (Handle)** | 3 | M3 Stainless Hex Nuts |
 | **Rim Screws** | 3 | M3 x 8mm Stainless Machine Screws (optional) |
 | **Rim Nuts** | 3 | M3 Stainless Hex Nuts (optional) |
 | **Binding Post Screw** | 1 | M4 x 20mm Stainless Screw (Spool Exit) |
@@ -135,10 +135,10 @@ Before deploying wire, perform a continuity check with a multimeter:
 | **Handle** | 1 | Print flat side (drum contact) down |
 | **Drum** | 1 | Print bearing-side down |
 | **Cap** | 1 | Print flat side down |
-| **Guard Pillar (plain)** | 2 | For two of the three pillar positions |
-| **Guard Pillar (eyelet)** | 1 | Has wire guide for antenna deployment |
+| **Wire Guard (plain)** | 2 | For two of the three guard positions |
+| **Wire Guard (eyelet)** | 1 | Has wire guide for antenna deployment |
 | **Bearing Spacer** | 1 | 13.5mm x 6mm, print spares recommended |
-| **Pillar Rim** | 1 | Optional, for extra rigidity |
+| **Guard Rim** | 1 | Optional, for extra rigidity |
 
 ### Left-Handed Configuration
-The eyelet pillar (wire guide) can be installed at either the 120° or 240° position depending on user preference. For left-handed operation, install the eyelet pillar on the opposite side from the default configuration. The two plain pillars fill the remaining positions.
+The eyelet wire guard can be installed at either the 120° or 240° position depending on user preference. For left-handed operation, install the eyelet guard on the opposite side from the default configuration. The two plain wire guards fill the remaining positions.

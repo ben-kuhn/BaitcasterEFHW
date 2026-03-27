@@ -14,7 +14,7 @@ The **EFHW-100W "Baitcaster"** is a specialized 3D-printed enclosure and wire ma
 ## 2. Design Philosophy
 The system utilizes a **Fixed-Cage Architecture**. Unlike traditional reels where the frame is a simple handle, this design employs a wrap-around cage that serves three purposes:
 1. **Mechanical Protection:** Protects the spool flanges from side-impacts.
-2. **Backlash Prevention:** The cage pillars prevent wire from jumping the spool (bird-nesting) during rapid deployment.
+2. **Backlash Prevention:** The wire guards prevent wire from jumping the spool (bird-nesting) during rapid deployment.
 3. **Safety:** Keeps the operator's hands away from the rotating antenna wire.
 
 ---
@@ -27,15 +27,15 @@ The handle is the interface between the user and the antenna.
 * **Ergonomic Profile:** Short arms (8mm diameter) and long arm with handle (10mm diameter).
 * **Central Hub:** 3/4-sphere design with M8 axle bore and nut trap on bottom.
 * **Flat Printing Surface:** Top surface is flat for printing against bed.
-* **Pillar Mounting:** M3 screw holes at each arm end for attaching separate guard pillars.
+* **Wire Guard Mounting:** M3 screw holes at each arm end for attaching separate wire guards.
 
-### B. Guard Pillars (Separate Parts)
-The pillars are printed separately and attached to the handle with M3 hardware.
+### B. Wire Guards (Separate Parts)
+The wire guards are printed separately and attached to the handle with M3 hardware.
 * **3/4-Round Profile:** Flat on one side for printing, rounded for comfort.
 * **Flared Ends:** Tapered sections at top and bottom for rigidity.
-* **Wire Eyelet:** One pillar includes a hollow tube (8mm bore) for wire guidance.
+* **Wire Eyelet:** One guard includes a hollow tube (8mm bore) for wire guidance.
 * **M3 Hardware:** Nut pockets at both ends for handle and optional rim attachment.
-* **Left/Right Handed:** Eyelet pillar can be installed at 120° or 240° position for left or right-handed operation.
+* **Left/Right Handed:** Eyelet guard can be installed at 120° or 240° position for left or right-handed operation.
 
 ### C. Rotating Drum (The Spool)
 The drum is a hollow "cup" design that houses the RF transformer.
@@ -58,10 +58,10 @@ The cap houses all RF connections and mounts the transformer.
 * **Crank Handle:** Tapered cylinder at 85° for retrieval.
 * **Cooling Vents:** Triangular vents for heat dissipation.
 
-### E. Optional Pillar Rim
-A circular ring that screws to the pillar tops for additional rigidity.
+### E. Optional Guard Rim
+A circular ring that screws to the wire guard tops for additional rigidity.
 * **Circular Design:** 148mm outer diameter, 12mm wide ring.
-* **M3 Mounting:** Three screw holes align with pillar nut pockets.
+* **M3 Mounting:** Three screw holes align with wire guard nut pockets.
 * **Crank Clearance:** Circular shape allows unobstructed handle rotation.
 
 ### F. Bearing Spacer
@@ -87,9 +87,9 @@ All parts fit on a standard 220×220mm print bed:
 * **Handle:** ~150mm diameter (Y-shaped tubular)
 * **Drum:** 120mm diameter
 * **Cap:** 120mm diameter
-* **Pillar Rim:** 148mm diameter
+* **Guard Rim:** 148mm diameter
 * **Bearing Spacer:** 13.5mm diameter
-* **Guard Pillars:** ~55mm × 16mm each
+* **Wire Guards:** ~55mm × 16mm each
 
 ### Thermal Management
 The design employs **Triple-Zone Ventilation**:
@@ -109,8 +109,8 @@ The design employs **Triple-Zone Ventilation**:
 | **Fender Washer** | M8 x 24mm OD | Retains drum and bearing |
 | **Cap Screws** | 3x M3 x 12mm Machine Screws | Cap-to-Drum Closure |
 | **Cap Nuts** | 3x M3 Hex Nuts | Captured in Drum |
-| **Pillar Screws** | 6x M3 x 10mm Machine Screws | Pillar-to-Handle (and rim) |
-| **Pillar Nuts** | 6x M3 Hex Nuts | Captured in Pillars |
+| **Wire Guard Screws** | 6x M3 x 10mm Machine Screws | Guard-to-Handle (and rim) |
+| **Wire Guard Nuts** | 6x M3 Hex Nuts | Captured in Wire Guards |
 | **Ground Bolt** | M5 x 10mm Bolt + Nut | Counterpoise Pigtail Attachment |
 | **RF Input** | BNC Bulkhead (Female, D-flat) | Coaxial Interface |
 
@@ -126,8 +126,8 @@ The design employs **Triple-Zone Ventilation**:
 ## 7. Ergonomics & Handedness
 The design accommodates both left and right-handed operators:
 * **Grip Position:** Fixed at 0° position on the handle.
-* **Eyelet Pillar:** Can be installed at either 120° (right-handed) or 240° (left-handed) position.
-* **Plain Pillars:** Fill the remaining two positions.
+* **Eyelet Guard:** Can be installed at either 120° (right-handed) or 240° (left-handed) position.
+* **Plain Guards:** Fill the remaining two positions.
 
 This flexibility allows the wire to deploy on the operator's preferred side while maintaining comfortable grip and crank handle access.
 

@@ -9,8 +9,8 @@ A 3D-printed "baitcasting-style" reel for End-Fed Half-Wave (EFHW) antenna deplo
 - **100W PEP** (SSB) / **30-50W continuous** (Digital/FT8)
 - **Integrated transformer** - FT240-43 toroid mounted inside cap
 - **Baitcaster design** - smooth wire deployment with backlash prevention
-- **Modular pillars** - separate guard pillars with optional wire eyelet
-- **Left/right-handed** - eyelet pillar can be installed on either side
+- **Modular wire guards** - separate guards with optional wire eyelet
+- **Left/right-handed** - eyelet guard can be installed on either side
 - **Parametric design** - supports PETG or ABS/ASA with automatic tolerance compensation
 
 ## Printed Parts
@@ -20,10 +20,10 @@ A 3D-printed "baitcasting-style" reel for End-Fed Half-Wave (EFHW) antenna deplo
 | Handle | 1 | Y-shaped tubular design, print flat side down |
 | Drum | 1 | Print bearing-side down |
 | Cap | 1 | Print flat side down |
-| Guard Pillar (plain) | 2 | Print flat side down |
-| Guard Pillar (eyelet) | 1 | Print flat side down, has wire guide |
+| Wire Guard (plain) | 2 | Print flat side down |
+| Wire Guard (eyelet) | 1 | Print flat side down, has wire guide |
 | Bearing Spacer | 1 | 13.5mm x 6mm, print spares |
-| Pillar Rim | 1 | Optional, for extra rigidity |
+| Guard Rim | 1 | Optional, for extra rigidity |
 
 ## Bill of Materials
 
@@ -35,8 +35,8 @@ A 3D-printed "baitcasting-style" reel for End-Fed Half-Wave (EFHW) antenna deplo
 | Axle Nut | 1 | M8 hex nut (lock nut recommended) |
 | Cap Screws | 3 | M3 x 12mm hex cap screws |
 | Cap Nuts | 3 | M3 hex nuts |
-| Pillar Screws | 6 | M3 x 10mm hex cap screws |
-| Pillar Nuts | 6 | M3 hex nuts |
+| Wire Guard Screws | 6 | M3 x 10mm hex cap screws |
+| Wire Guard Nuts | 6 | M3 hex nuts |
 | Rim Screws | 3 | M3 x 8mm hex cap screws (optional) |
 | Binding Post | 1 | M4 x 20mm screw + nut/wingnut |
 | Ground Bolt | 1 | M5 x 10mm bolt + nut (for pigtail) |
