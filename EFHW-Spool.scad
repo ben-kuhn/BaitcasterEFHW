@@ -345,16 +345,25 @@ module guard_rim() {
 // 5. BEARING SPACER (Printed - replaces washers)
 // ========================================
 // Fits in the retention ring hole, spaces drum from frame
+// Two-step design: wider flange catches on retention ring shoulder
 module bearing_spacer() {
-    spacer_od = 13.5;      // Fits loosely in 14mm retention hole
+    spacer_od = 13.5;      // Top section - fits loosely in 14mm retention hole
+    flange_od = 18;        // Bottom section - 4mm larger than 14mm shoulder hole
     spacer_id = m8_bore;   // M8 bolt passes through
-    spacer_height = 6;     // Contacts bearing, spaces drum from handle
+    flange_height = 3;     // Bottom flange height
+    top_height = 3;        // Top section height (total 6mm)
 
     translate([-(flange_d + 40), -(flange_d/2 + 20), 0]) {
         difference() {
-            cylinder(d = spacer_od, h = spacer_height);
+            union() {
+                // Bottom flange - catches on retention ring shoulder
+                cylinder(d = flange_od, h = flange_height);
+                // Top section - fits in retention ring hole
+                translate([0, 0, flange_height])
+                    cylinder(d = spacer_od, h = top_height);
+            }
             translate([0, 0, -1])
-                cylinder(d = spacer_id, h = spacer_height + 2);
+                cylinder(d = spacer_id, h = flange_height + top_height + 2);
         }
     }
 }
