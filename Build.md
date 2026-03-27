@@ -46,13 +46,14 @@ The heart of the system is the broadband transformer. For 100W operation, we uti
 * **Optional Rim:** If using the pillar rim, install **M3 nuts** in the slots at the top of each pillar.
 
 ### Step 2: The "Marriage" (Axle Installation)
-The printed bearing spacer provides proper spacing between the drum and frame.
-1. Thread the **M8 x 65mm Bolt** into the **Handle** center hub (nut is on the bottom).
-2. Place the **printed bearing spacer** on the bolt above the frame.
+The printed bearing spacer provides proper spacing between the drum and handle.
+1. Thread the **M8 x 65mm Bolt** into the **Handle** center hub (nut is on the bottom—lock nut recommended).
+2. Place the **printed bearing spacer** on the bolt above the handle.
 3. Lower the **Rotating Drum** (bearing-side down) onto the bolt. The spacer fits into the retention ring hole and contacts the bearing.
-4. Align the **Master Cap** against the **Rotating Drum**, matching the alignment pegs (at 90° and 270°) to their holes.
-5. Pass the bolt through the center of the **Master Cap**.
-6. **Tighten:** Secure with a nut or use a deep-well socket on the bolt head. Ensure the assembly spins freely on the bearing with no lateral play.
+4. Place the **fender washer** on the bolt inside the drum, over the bearing. This retains the drum and bearing on the axle.
+5. Align the **Master Cap** against the **Rotating Drum**, matching the alignment pegs (at 90° and 270°) to their holes.
+6. Pass the bolt through the center of the **Master Cap**.
+7. **Tighten:** Secure with a nut or use a deep-well socket on the bolt head. Ensure the assembly spins freely on the bearing with no lateral play.
 
 ### Step 3: Final Wiring & Closure
 1. Connect the transformer secondary lead to the binding post jumper using **spade connectors**. This allows the cap to be removed for future maintenance.
@@ -88,7 +89,7 @@ Before deploying wire, perform a continuity check with a multimeter:
 | Item | Quantity | Specification |
 | :--- | :--- | :--- |
 | **Main Axle** | 1 | M8 x 65mm Stainless Bolt |
-| **Axle Nut** | 1 | M8 Stainless Hex Nut |
+| **Axle Nut** | 1 | M8 Stainless Hex Nut (lock nut recommended) |
 | **Cap Closure Screws** | 3 | M3 x 12mm Stainless Machine Screws |
 | **Captured Cap Nuts** | 3 | M3 Stainless Hex Nuts |
 | **Pillar Screws (Handle)** | 3 | M3 x 10mm Stainless Machine Screws |
@@ -100,13 +101,12 @@ Before deploying wire, perform a continuity check with a multimeter:
 | **Ground Bolt** | 1 | M5 x 10mm Bolt + Nut + Ring Terminal |
 | **Ground Pigtail** | 1 | 15-20cm wire with quick-connect (spade/PowerPole) |
 
-### Bearings
+### Bearings & Washers
 
 | Item | Quantity | Specification |
 | :--- | :--- | :--- |
 | **Main Bearing** | 1 | 608zz Skateboard Bearing (8x22x7mm) |
-
-*Note: Printed bearing spacer replaces metal washers.*
+| **Fender Washer** | 1 | M8 x 24mm OD (retains drum and bearing) |
 
 ### Electronics
 
@@ -137,7 +137,7 @@ Before deploying wire, perform a continuity check with a multimeter:
 | **Cap** | 1 | Print flat side down |
 | **Guard Pillar (plain)** | 2 | For two of the three pillar positions |
 | **Guard Pillar (eyelet)** | 1 | Has wire guide for antenna deployment |
-| **Bearing Spacer** | 1 | 13.5mm x 4mm, print spares recommended |
+| **Bearing Spacer** | 1 | 13.5mm x 6mm, print spares recommended |
 | **Pillar Rim** | 1 | Optional, for extra rigidity |
 
 ### Left-Handed Configuration

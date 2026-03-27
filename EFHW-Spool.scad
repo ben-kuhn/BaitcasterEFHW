@@ -348,7 +348,7 @@ module pillar_rim() {
 module bearing_spacer() {
     spacer_od = 13.5;      // Fits loosely in 14mm retention hole
     spacer_id = m8_bore;   // M8 bolt passes through
-    spacer_height = 4;     // Contacts bearing, spaces drum from frame
+    spacer_height = 6;     // Contacts bearing, spaces drum from handle
 
     translate([-(flange_d + 40), -(flange_d/2 + 20), 0]) {
         difference() {

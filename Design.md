@@ -66,7 +66,7 @@ A circular ring that screws to the pillar tops for additional rigidity.
 
 ### F. Bearing Spacer
 A small printed ring that replaces metal washers for drum-to-handle spacing.
-* **Dimensions:** 13.5mm OD × 4mm tall with M8 bore.
+* **Dimensions:** 13.5mm OD × 6mm tall with M8 bore.
 * **Function:** Fits in retention ring hole, contacts bearing, spaces drum from handle.
 * **Recommendation:** Print spares as these are small and easy to lose.
 
@@ -104,8 +104,9 @@ The design employs **Triple-Zone Ventilation**:
 | Component | Specification | Function |
 | :--- | :--- | :--- |
 | **Central Axle** | M8 x 65mm Stainless Bolt | Main Rotation Axis |
-| **Axle Nut** | M8 Hex Nut | Captured in Handle |
+| **Axle Nut** | M8 Hex Nut (lock nut recommended) | Captured in Handle |
 | **Main Bearing** | 608zz (8x22x7mm) | Friction Reduction |
+| **Fender Washer** | M8 x 24mm OD | Retains drum and bearing |
 | **Cap Screws** | 3x M3 x 12mm Machine Screws | Cap-to-Drum Closure |
 | **Cap Nuts** | 3x M3 Hex Nuts | Captured in Drum |
 | **Pillar Screws** | 6x M3 x 10mm Machine Screws | Pillar-to-Handle (and rim) |
