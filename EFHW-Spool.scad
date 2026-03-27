@@ -212,9 +212,9 @@ module rotating_drum() {
     }
 
     // BEARING SUPPORT RING - added separately so hollow interior doesn't remove it
-    // 4mm wall collar around bearing for grip
+    // 4mm wall collar around bearing for grip (bearing sticks out 2mm into drum)
     difference() {
-        cylinder(d = bearing_seat + 10, h = 9);
+        cylinder(d = bearing_seat + 10, h = 7);
         // Cut bearing seat and center hole
         translate([0, 0, 2])
             cylinder(d = bearing_seat, h = 10);
