@@ -37,8 +37,8 @@ echo(str("Wall thickness: ", wall, "mm"));
 // Print with flat top (drum contact surface) against bed
 // 3/4-round tubes: small flat on bed side, mostly rounded
 module left_frame_cage() {
-    short_arm_radius = 4;   // 8mm diameter for short legs
-    long_arm_radius = 5;    // 10mm diameter for long leg + handle
+    short_arm_radius = 6.5;   // 13mm diameter for short legs
+    long_arm_radius = 8;      // 16mm diameter for long leg + handle
     hub_radius = 12;        // Central hub
 
     // 3/4 sphere - flat on top at Z=0, rounded underneath
@@ -58,7 +58,7 @@ module left_frame_cage() {
                 // Central hub - 3/4 sphere
                 three_quarter_sphere(hub_radius);
 
-                // Short arms at 120° and 240° (8mm diameter)
+                // Short arms at 120° and 240° (13mm diameter)
                 for(a = [120, 240]) rotate([0, 0, a])
                     hull() {
                         // Hub end
@@ -68,7 +68,7 @@ module left_frame_cage() {
                             three_quarter_sphere(short_arm_radius);
                     }
 
-                // Long arm at 0° (10mm diameter) - extends into handle
+                // Long arm at 0° (16mm diameter) - extends into handle
                 hull() {
                     // Hub end
                     three_quarter_sphere(long_arm_radius);
