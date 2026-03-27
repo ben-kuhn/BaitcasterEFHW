@@ -17,7 +17,7 @@ A 3D-printed "baitcasting-style" reel for End-Fed Half-Wave (EFHW) antenna deplo
 
 | Part | Qty | Notes |
 |------|-----|-------|
-| Frame | 1 | Y-shaped tubular design, print flat side down |
+| Handle | 1 | Y-shaped tubular design, print flat side down |
 | Drum | 1 | Print bearing-side down |
 | Cap | 1 | Print flat side down |
 | Guard Pillar (plain) | 2 | Print flat side down |

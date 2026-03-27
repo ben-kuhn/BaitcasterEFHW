@@ -38,7 +38,7 @@ The heart of the system is the broadband transformer. For 100W operation, we uti
 ## 3. Mechanical Assembly
 
 ### Step 1: Hardware Preparation
-* **Frame:** Press-fit the **M8 Nut** into the hexagonal recess on the bottom of the center hub.
+* **Handle:** Press-fit the **M8 Nut** into the hexagonal recess on the bottom of the center hub.
 * **Drum:** Press the **608zz Bearing** into the center seat of the spool. The retention ring and support collar hold the bearing securely.
 * **Drum Nut Pockets:** Slide **3x M3 Nuts** into the pockets inside the drum (at 0°, 120°, 240°) through the insertion slots.
 * **Binding Post:** Insert an **M4 x 20mm Stainless Screw** through the spool exit port from the inside out. Secure it on the outside with a nut or wingnut. This is your antenna wire connection point.
@@ -47,7 +47,7 @@ The heart of the system is the broadband transformer. For 100W operation, we uti
 
 ### Step 2: The "Marriage" (Axle Installation)
 The printed bearing spacer provides proper spacing between the drum and frame.
-1. Thread the **M8 x 65mm Bolt** into the **Stationary Frame** center hub (nut is on the bottom).
+1. Thread the **M8 x 65mm Bolt** into the **Handle** center hub (nut is on the bottom).
 2. Place the **printed bearing spacer** on the bolt above the frame.
 3. Lower the **Rotating Drum** (bearing-side down) onto the bolt. The spacer fits into the retention ring hole and contacts the bearing.
 4. Align the **Master Cap** against the **Rotating Drum**, matching the alignment pegs (at 90° and 270°) to their holes.
@@ -91,8 +91,8 @@ Before deploying wire, perform a continuity check with a multimeter:
 | **Axle Nut** | 1 | M8 Stainless Hex Nut |
 | **Cap Closure Screws** | 3 | M3 x 12mm Stainless Machine Screws |
 | **Captured Cap Nuts** | 3 | M3 Stainless Hex Nuts |
-| **Pillar Screws (Frame)** | 3 | M3 x 10mm Stainless Machine Screws |
-| **Pillar Nuts (Frame)** | 3 | M3 Stainless Hex Nuts |
+| **Pillar Screws (Handle)** | 3 | M3 x 10mm Stainless Machine Screws |
+| **Pillar Nuts (Handle)** | 3 | M3 Stainless Hex Nuts |
 | **Rim Screws** | 3 | M3 x 8mm Stainless Machine Screws (optional) |
 | **Rim Nuts** | 3 | M3 Stainless Hex Nuts (optional) |
 | **Binding Post Screw** | 1 | M4 x 20mm Stainless Screw (Spool Exit) |
@@ -132,7 +132,7 @@ Before deploying wire, perform a continuity check with a multimeter:
 
 | Part | Quantity | Notes |
 | :--- | :--- | :--- |
-| **Frame** | 1 | Print flat side (drum contact) down |
+| **Handle** | 1 | Print flat side (drum contact) down |
 | **Drum** | 1 | Print bearing-side down |
 | **Cap** | 1 | Print flat side down |
 | **Guard Pillar (plain)** | 2 | For two of the three pillar positions |

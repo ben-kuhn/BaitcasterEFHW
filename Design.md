@@ -6,7 +6,7 @@ The **EFHW-100W "Baitcaster"** is a specialized 3D-printed enclosure and wire ma
 ### Core Specifications
 * **Transformer Support:** Optimized for FT240-43 ferrite toroid (ID: 36.35mm, OD: 60.25mm).
 * **Power Rating:** 100W PEP (SSB); 30W-50W Continuous (Digital/FT8).
-* **Architecture:** Stationary Frame with Rotating Modular Drum.
+* **Architecture:** Stationary Handle with Rotating Modular Drum.
 * **Material:** Single parametric design supports PETG or ABS/ASA with automatic tolerance compensation.
 
 ---
@@ -21,8 +21,8 @@ The system utilizes a **Fixed-Cage Architecture**. Unlike traditional reels wher
 
 ## 3. Mechanical Components
 
-### A. Stationary Frame (The Chassis)
-The frame is the interface between the user and the antenna.
+### A. Handle (The Chassis)
+The handle is the interface between the user and the antenna.
 * **Y-Shaped Tubular Design:** Three 3/4-round tubular arms at 120° spacing.
 * **Ergonomic Profile:** Short arms (8mm diameter) and long arm with handle (10mm diameter).
 * **Central Hub:** 3/4-sphere design with M8 axle bore and nut trap on bottom.
@@ -30,11 +30,11 @@ The frame is the interface between the user and the antenna.
 * **Pillar Mounting:** M3 screw holes at each arm end for attaching separate guard pillars.
 
 ### B. Guard Pillars (Separate Parts)
-The pillars are printed separately and attached to the frame with M3 hardware.
+The pillars are printed separately and attached to the handle with M3 hardware.
 * **3/4-Round Profile:** Flat on one side for printing, rounded for comfort.
 * **Flared Ends:** Tapered sections at top and bottom for rigidity.
 * **Wire Eyelet:** One pillar includes a hollow tube (8mm bore) for wire guidance.
-* **M3 Hardware:** Nut pockets at both ends for frame and optional rim attachment.
+* **M3 Hardware:** Nut pockets at both ends for handle and optional rim attachment.
 * **Left/Right Handed:** Eyelet pillar can be installed at 120° or 240° position for left or right-handed operation.
 
 ### C. Rotating Drum (The Spool)
@@ -65,9 +65,9 @@ A circular ring that screws to the pillar tops for additional rigidity.
 * **Crank Clearance:** Circular shape allows unobstructed handle rotation.
 
 ### F. Bearing Spacer
-A small printed ring that replaces metal washers for drum-to-frame spacing.
+A small printed ring that replaces metal washers for drum-to-handle spacing.
 * **Dimensions:** 13.5mm OD × 4mm tall with M8 bore.
-* **Function:** Fits in retention ring hole, contacts bearing, spaces drum from frame.
+* **Function:** Fits in retention ring hole, contacts bearing, spaces drum from handle.
 * **Recommendation:** Print spares as these are small and easy to lose.
 
 ---
@@ -84,7 +84,7 @@ A small printed ring that replaces metal washers for drum-to-frame spacing.
 
 ### Print Bed Compatibility
 All parts fit on a standard 220×220mm print bed:
-* **Frame:** ~150mm diameter (Y-shaped tubular)
+* **Handle:** ~150mm diameter (Y-shaped tubular)
 * **Drum:** 120mm diameter
 * **Cap:** 120mm diameter
 * **Pillar Rim:** 148mm diameter
@@ -104,11 +104,11 @@ The design employs **Triple-Zone Ventilation**:
 | Component | Specification | Function |
 | :--- | :--- | :--- |
 | **Central Axle** | M8 x 65mm Stainless Bolt | Main Rotation Axis |
-| **Axle Nut** | M8 Hex Nut | Captured in Frame |
+| **Axle Nut** | M8 Hex Nut | Captured in Handle |
 | **Main Bearing** | 608zz (8x22x7mm) | Friction Reduction |
 | **Cap Screws** | 3x M3 x 12mm Machine Screws | Cap-to-Drum Closure |
 | **Cap Nuts** | 3x M3 Hex Nuts | Captured in Drum |
-| **Pillar Screws** | 6x M3 x 10mm Machine Screws | Pillar-to-Frame (and rim) |
+| **Pillar Screws** | 6x M3 x 10mm Machine Screws | Pillar-to-Handle (and rim) |
 | **Pillar Nuts** | 6x M3 Hex Nuts | Captured in Pillars |
 | **Ground Bolt** | M5 x 10mm Bolt + Nut | Counterpoise Pigtail Attachment |
 | **RF Input** | BNC Bulkhead (Female, D-flat) | Coaxial Interface |
@@ -124,7 +124,7 @@ The design employs **Triple-Zone Ventilation**:
 
 ## 7. Ergonomics & Handedness
 The design accommodates both left and right-handed operators:
-* **Handle Position:** Fixed at 0° position on the frame.
+* **Grip Position:** Fixed at 0° position on the handle.
 * **Eyelet Pillar:** Can be installed at either 120° (right-handed) or 240° (left-handed) position.
 * **Plain Pillars:** Fill the remaining two positions.
 
