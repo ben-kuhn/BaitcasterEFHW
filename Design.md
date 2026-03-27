@@ -64,6 +64,12 @@ A circular ring that screws to the pillar tops for additional rigidity.
 * **M3 Mounting:** Three screw holes align with pillar nut pockets.
 * **Crank Clearance:** Circular shape allows unobstructed handle rotation.
 
+### F. Bearing Spacer
+A small printed ring that replaces metal washers for drum-to-frame spacing.
+* **Dimensions:** 13.5mm OD × 4mm tall with M8 bore.
+* **Function:** Fits in retention ring hole, contacts bearing, spaces drum from frame.
+* **Recommendation:** Print spares as these are small and easy to lose.
+
 ---
 
 ## 4. Engineering Specifications
@@ -82,6 +88,7 @@ All parts fit on a standard 220×220mm print bed:
 * **Drum:** 120mm diameter
 * **Cap:** 120mm diameter
 * **Pillar Rim:** 148mm diameter
+* **Bearing Spacer:** 13.5mm diameter
 * **Guard Pillars:** ~55mm × 16mm each
 
 ### Thermal Management
@@ -99,8 +106,6 @@ The design employs **Triple-Zone Ventilation**:
 | **Central Axle** | M8 x 65mm Stainless Bolt | Main Rotation Axis |
 | **Axle Nut** | M8 Hex Nut | Captured in Frame |
 | **Main Bearing** | 608zz (8x22x7mm) | Friction Reduction |
-| **Fender Washer** | M8 x 24mm OD | Inside drum, over bearing |
-| **Spacing Washer** | M8 Flat Washer | Between drum and frame |
 | **Cap Screws** | 3x M3 x 12mm Machine Screws | Cap-to-Drum Closure |
 | **Cap Nuts** | 3x M3 Hex Nuts | Captured in Drum |
 | **Pillar Screws** | 6x M3 x 10mm Machine Screws | Pillar-to-Frame (and rim) |

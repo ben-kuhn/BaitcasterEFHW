@@ -22,6 +22,7 @@ A 3D-printed "baitcasting-style" reel for End-Fed Half-Wave (EFHW) antenna deplo
 | Cap | 1 | Print flat side down |
 | Guard Pillar (plain) | 2 | Print flat side down |
 | Guard Pillar (eyelet) | 1 | Print flat side down, has wire guide |
+| Bearing Spacer | 1 | 13.5mm x 4mm, print spares |
 | Pillar Rim | 1 | Optional, for extra rigidity |
 
 ## Bill of Materials
@@ -40,13 +41,13 @@ A 3D-printed "baitcasting-style" reel for End-Fed Half-Wave (EFHW) antenna deplo
 | Binding Post | 1 | M4 x 20mm screw + nut/wingnut |
 | Ground Bolt | 1 | M5 x 10mm bolt + nut (for pigtail) |
 
-### Bearings & Washers
+### Bearings
 
 | Item | Qty | Specification |
 |------|-----|---------------|
 | Main Bearing | 1 | 608zz (8x22x7mm) |
-| Fender Washer | 1 | M8 x 24mm OD (inside drum) |
-| Spacing Washer | 1 | M8 flat washer (drum to frame) |
+
+*Note: Printed bearing spacer replaces metal washers.*
 
 ### Electronics
 
