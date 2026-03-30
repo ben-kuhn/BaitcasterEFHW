@@ -1,5 +1,7 @@
 # Design Document: EFHW-100W "Baitcaster" Deployment System
 
+**Version:** 1.0 Beta1
+
 ## 1. Project Overview
 The **EFHW-100W "Baitcaster"** is a specialized 3D-printed enclosure and wire management system designed for End-Fed Half-Wave (EFHW) antennas. It bridges the gap between portable QRP winders and heavy-duty stationary baluns by integrating a high-power transformer (Unun) directly into a "baitcasting-style" reel.
 
@@ -65,9 +67,9 @@ A circular ring that screws to the wire guard tops for additional rigidity.
 * **Crank Clearance:** Circular shape allows unobstructed handle rotation.
 
 ### F. Bearing Spacer
-A small printed ring that replaces metal washers for drum-to-handle spacing.
-* **Dimensions:** 13.5mm OD × 6mm tall with M8 bore.
-* **Function:** Fits in retention ring hole, contacts bearing, spaces drum from handle.
+A stepped printed ring that replaces metal washers for drum-to-handle spacing.
+* **Stepped Design:** 18mm flange (bottom 3mm) and 13.5mm shaft (top 3mm) with M8 bore.
+* **Function:** Flange catches on retention ring shoulder, shaft fits in 14mm hole, limits axial play to 1mm.
 * **Recommendation:** Print spares as these are small and easy to lose.
 
 ---

@@ -1,6 +1,6 @@
 # EFHW-100W "Baitcaster"
 
-**Status:** Prototype stage - design actively being refined.
+**Version:** 1.0 Beta1
 
 A 3D-printed "baitcasting-style" reel for End-Fed Half-Wave (EFHW) antenna deployment. Integrates a 49:1 unun wound on an FT240-43 toroid directly into the spool, with BNC connector for coax input and M5 ground bolt for counterpoise connection.
 
@@ -22,7 +22,7 @@ A 3D-printed "baitcasting-style" reel for End-Fed Half-Wave (EFHW) antenna deplo
 | Cap | 1 | Print flat side down |
 | Wire Guard (plain) | 2 | Print flat side down |
 | Wire Guard (eyelet) | 1 | Print flat side down, has wire guide |
-| Bearing Spacer | 1 | 13.5mm x 6mm, print spares |
+| Bearing Spacer | 1 | Stepped design (18mm/13.5mm x 6mm), print spares |
 | Guard Rim | 1 | Optional, for extra rigidity |
 
 ## Bill of Materials

@@ -1,5 +1,7 @@
 # Build & Assembly Guide: EFHW-100W "Baitcaster"
 
+**Version:** 1.0 Beta1
+
 This guide provides step-by-step instructions for the mechanical assembly and electrical winding of the 100W End-Fed Half-Wave (EFHW) antenna deployment system.
 
 ---
@@ -137,7 +139,7 @@ Before deploying wire, perform a continuity check with a multimeter:
 | **Cap** | 1 | Print flat side down |
 | **Wire Guard (plain)** | 2 | For two of the three guard positions |
 | **Wire Guard (eyelet)** | 1 | Has wire guide for antenna deployment |
-| **Bearing Spacer** | 1 | 13.5mm x 6mm, print spares recommended |
+| **Bearing Spacer** | 1 | Stepped design (18mm/13.5mm x 6mm), print spares recommended |
 | **Guard Rim** | 1 | Optional, for extra rigidity |
 
 ### Left-Handed Configuration
