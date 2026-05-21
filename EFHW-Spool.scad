@@ -32,7 +32,7 @@ echo(str("Bearing seat: ", bearing_seat, "mm"));
 echo(str("Wall thickness: ", wall, "mm"));
 
 // ========================================
-// 1. THE HANDLE (Y-Shaped Tubular Frame)
+// 1. THE HANDLE (Ұ-Shaped Tubular Frame)
 // ========================================
 // Print with flat top (drum contact surface) against bed
 // 3/4-round tubes: small flat on bed side, mostly rounded
@@ -83,6 +83,16 @@ module handle() {
                         three_quarter_sphere(long_arm_radius);
                     translate([pillar_radius + 50, 0, 0])
                         three_quarter_sphere(long_arm_radius);
+                }
+
+                // Crossbar at bottom of long arm (Ұ shape - like fishing reel)
+                hull() {
+                    translate([pillar_radius + 50, 0, 0])
+                        three_quarter_sphere(long_arm_radius);
+                    translate([pillar_radius + 50, -30, 0])
+                        three_quarter_sphere(short_arm_radius);
+                    translate([pillar_radius + 50, 30, 0])
+                        three_quarter_sphere(short_arm_radius);
                 }
             }
 
